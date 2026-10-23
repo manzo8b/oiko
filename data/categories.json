@@ -1,0 +1,371 @@
+{
+  "project": "Oiko",
+  "version": "1.1",
+  "currency": "EUR",
+  "categories": [
+    {
+      "id": "casa-utenze",
+      "label": "Casa e utenze",
+      "icon": "house",
+      "subcategories": [
+        {
+          "id": "casa-utenze-01",
+          "label": "Luce"
+        },
+        {
+          "id": "casa-utenze-02",
+          "label": "Gas"
+        },
+        {
+          "id": "casa-utenze-03",
+          "label": "Acqua"
+        },
+        {
+          "id": "casa-utenze-04",
+          "label": "TARI e rifiuti"
+        },
+        {
+          "id": "casa-utenze-05",
+          "label": "Condominio"
+        },
+        {
+          "id": "casa-utenze-06",
+          "label": "Affitto"
+        },
+        {
+          "id": "casa-utenze-07",
+          "label": "Mutuo"
+        },
+        {
+          "id": "casa-utenze-08",
+          "label": "Altre utenze"
+        }
+      ]
+    },
+    {
+      "id": "supermercato-alimentari",
+      "label": "Supermercato e alimentari",
+      "icon": "shopping-cart",
+      "subcategories": [
+        {
+          "id": "supermercato-alimentari-01",
+          "label": "Spesa supermercato"
+        },
+        {
+          "id": "supermercato-alimentari-02",
+          "label": "Alimentari"
+        },
+        {
+          "id": "supermercato-alimentari-03",
+          "label": "Mercato e prodotti freschi"
+        },
+        {
+          "id": "supermercato-alimentari-04",
+          "label": "Prodotti per la casa"
+        },
+        {
+          "id": "supermercato-alimentari-05",
+          "label": "Igiene domestica"
+        },
+        {
+          "id": "supermercato-alimentari-06",
+          "label": "Altro alimentare"
+        }
+      ]
+    },
+    {
+      "id": "abbigliamento",
+      "label": "Abbigliamento e accessori",
+      "icon": "shirt",
+      "subcategories": [
+        {
+          "id": "abbigliamento-01",
+          "label": "Abbigliamento"
+        },
+        {
+          "id": "abbigliamento-02",
+          "label": "Calzature"
+        },
+        {
+          "id": "abbigliamento-03",
+          "label": "Accessori"
+        },
+        {
+          "id": "abbigliamento-04",
+          "label": "Sartoria e riparazioni"
+        },
+        {
+          "id": "abbigliamento-05",
+          "label": "Lavanderia"
+        }
+      ]
+    },
+    {
+      "id": "salute-farmacia",
+      "label": "Salute e farmacia",
+      "icon": "heart-pulse",
+      "subcategories": [
+        {
+          "id": "salute-farmacia-01",
+          "label": "Farmacia"
+        },
+        {
+          "id": "salute-farmacia-02",
+          "label": "Parafarmacia"
+        },
+        {
+          "id": "salute-farmacia-03",
+          "label": "Odontologia"
+        },
+        {
+          "id": "salute-farmacia-04",
+          "label": "Visite mediche"
+        },
+        {
+          "id": "salute-farmacia-05",
+          "label": "Esami e analisi"
+        },
+        {
+          "id": "salute-farmacia-06",
+          "label": "Dispositivi sanitari"
+        },
+        {
+          "id": "salute-farmacia-07",
+          "label": "Altre spese sanitarie"
+        }
+      ]
+    },
+    {
+      "id": "cura-personale",
+      "label": "Cura personale e benessere",
+      "icon": "scissors",
+      "subcategories": [
+        {
+          "id": "cura-personale-01",
+          "label": "Pedicure"
+        },
+        {
+          "id": "cura-personale-02",
+          "label": "Manicure"
+        },
+        {
+          "id": "cura-personale-03",
+          "label": "Parrucchiere"
+        },
+        {
+          "id": "cura-personale-04",
+          "label": "Barbiere"
+        },
+        {
+          "id": "cura-personale-05",
+          "label": "Estetista"
+        },
+        {
+          "id": "cura-personale-06",
+          "label": "Cosmetici"
+        },
+        {
+          "id": "cura-personale-07",
+          "label": "Altre cure personali"
+        }
+      ]
+    },
+    {
+      "id": "internet-telefonia",
+      "label": "Internet e telefonia",
+      "icon": "wifi",
+      "subcategories": [
+        {
+          "id": "internet-telefonia-01",
+          "label": "Internet casa"
+        },
+        {
+          "id": "internet-telefonia-02",
+          "label": "SIM e cellulare"
+        },
+        {
+          "id": "internet-telefonia-03",
+          "label": "Telefono fisso"
+        },
+        {
+          "id": "internet-telefonia-04",
+          "label": "Dispositivi a rate"
+        }
+      ]
+    },
+    {
+      "id": "digitale-media",
+      "label": "TV, musica e software",
+      "icon": "tv",
+      "subcategories": [
+        {
+          "id": "digitale-media-01",
+          "label": "TV e streaming"
+        },
+        {
+          "id": "digitale-media-02",
+          "label": "Musica in abbonamento"
+        },
+        {
+          "id": "digitale-media-03",
+          "label": "Cloud e archiviazione"
+        },
+        {
+          "id": "digitale-media-04",
+          "label": "Software e licenze"
+        },
+        {
+          "id": "digitale-media-05",
+          "label": "Gaming e contenuti digitali"
+        }
+      ]
+    },
+    {
+      "id": "mobilita-assicurazioni",
+      "label": "Mobilità e assicurazioni",
+      "icon": "car",
+      "subcategories": [
+        {
+          "id": "mobilita-assicurazioni-01",
+          "label": "Carburante"
+        },
+        {
+          "id": "mobilita-assicurazioni-02",
+          "label": "Assicurazioni veicoli"
+        },
+        {
+          "id": "mobilita-assicurazioni-03",
+          "label": "Bollo auto"
+        },
+        {
+          "id": "mobilita-assicurazioni-04",
+          "label": "Parcheggi"
+        },
+        {
+          "id": "mobilita-assicurazioni-05",
+          "label": "Pedaggi"
+        },
+        {
+          "id": "mobilita-assicurazioni-06",
+          "label": "Trasporto pubblico"
+        },
+        {
+          "id": "mobilita-assicurazioni-07",
+          "label": "Manutenzione veicoli"
+        },
+        {
+          "id": "mobilita-assicurazioni-08",
+          "label": "Altre assicurazioni"
+        }
+      ]
+    },
+    {
+      "id": "istruzione",
+      "label": "Scuola e formazione",
+      "icon": "graduation-cap",
+      "subcategories": [
+        {
+          "id": "istruzione-01",
+          "label": "Scuola e università"
+        },
+        {
+          "id": "istruzione-02",
+          "label": "Libri e materiali"
+        },
+        {
+          "id": "istruzione-03",
+          "label": "Mensa"
+        },
+        {
+          "id": "istruzione-04",
+          "label": "Corsi e formazione"
+        },
+        {
+          "id": "istruzione-05",
+          "label": "Attività educative"
+        }
+      ]
+    },
+    {
+      "id": "casa-manutenzione",
+      "label": "Manutenzione casa",
+      "icon": "wrench",
+      "subcategories": [
+        {
+          "id": "casa-manutenzione-01",
+          "label": "Riparazioni"
+        },
+        {
+          "id": "casa-manutenzione-02",
+          "label": "Elettrodomestici"
+        },
+        {
+          "id": "casa-manutenzione-03",
+          "label": "Artigiani e tecnici"
+        },
+        {
+          "id": "casa-manutenzione-04",
+          "label": "Arredamento"
+        },
+        {
+          "id": "casa-manutenzione-05",
+          "label": "Materiali e fai-da-te"
+        }
+      ]
+    },
+    {
+      "id": "tempo-libero",
+      "label": "Tempo libero e ristorazione",
+      "icon": "utensils",
+      "subcategories": [
+        {
+          "id": "tempo-libero-01",
+          "label": "Ristoranti e bar"
+        },
+        {
+          "id": "tempo-libero-02",
+          "label": "Viaggi e vacanze"
+        },
+        {
+          "id": "tempo-libero-03",
+          "label": "Cinema e spettacoli"
+        },
+        {
+          "id": "tempo-libero-04",
+          "label": "Hobby e attività"
+        },
+        {
+          "id": "tempo-libero-05",
+          "label": "Sport"
+        }
+      ]
+    },
+    {
+      "id": "altre-spese",
+      "label": "Altre spese",
+      "icon": "wallet",
+      "subcategories": [
+        {
+          "id": "altre-spese-01",
+          "label": "Regali"
+        },
+        {
+          "id": "altre-spese-02",
+          "label": "Animali domestici"
+        },
+        {
+          "id": "altre-spese-03",
+          "label": "Imprevisti"
+        },
+        {
+          "id": "altre-spese-04",
+          "label": "Tributi e pratiche"
+        },
+        {
+          "id": "altre-spese-05",
+          "label": "Spese da classificare"
+        }
+      ]
+    }
+  ]
+}

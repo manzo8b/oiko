@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f8f6">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="description" content="Oiko: organizza le spese domestiche, tieni sotto controllo scadenze e abbonamenti, direttamente nel tuo dispositivo.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
+  <title>Oiko · Le tue spese, in ordine</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <div class="app-shell" id="app">
+    <aside class="sidebar" aria-label="Navigazione principale">
+      <a href="#oggi" class="brand" aria-label="Oiko, vai alla panoramica"><span class="brand-icon">⌂</span><span>oiko<span class="brand-dot">.</span></span></a>
+      <p class="side-caption">LA TUA CASA, IN ORDINE</p>
+      <nav id="side-nav" aria-label="Sezioni"></nav>
+      <div class="sidebar-footer"><div class="privacy-mark"><span class="private-dot"></span> Solo sul tuo dispositivo</div><p>Nessun conto collegato.<br>Nessun dato inviato a Oiko.</p></div>
+    </aside>
+    <div class="right-panel">
+      <header class="topbar"><div class="top-brand"><span class="brand-icon">⌂</span><strong>oiko<span class="brand-dot">.</span></strong></div><div class="topbar-actions"><span class="privacy-pill">⌁ Dati locali</span><button class="button primary small" id="top-add" type="button">+ Aggiungi spesa</button></div></header>
+      <main id="content" tabindex="-1" aria-live="polite"></main>
+      <footer class="main-footer">Oiko · Organizzazione domestica · I pagamenti avvengono sempre all'esterno dell'app</footer>
+    </div>
+    <nav class="bottom-nav" id="bottom-nav" aria-label="Navigazione mobile"></nav>
+  </div>
+  <dialog id="modal" class="dialog"><div id="modal-body"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./assets/app.mjs"></script>
+</body>
+</html>

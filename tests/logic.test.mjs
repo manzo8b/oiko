@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {isIsoDate,addMonthsClamped,parseEuros,monthlyTotal,dueStatus,afterPayment,estimatedYearly,escapeHtml,monthShift} from '../assets/logic.mjs';
+test('Date ISO valide e non valide',()=>{assert.equal(isIsoDate('2026-02-28'),true);assert.equal(isIsoDate('2026-02-30'),false);assert.equal(isIsoDate('2028-02-29'),true);});
+test('Clamping con ancora al 31 per bollette',()=>{assert.equal(addMonthsClamped('2026-01-31',1,31),'2026-02-28');assert.equal(addMonthsClamped('2026-02-28',1,31),'2026-03-31');assert.equal(addMonthsClamped('2024-01-31',1,31),'2024-02-29');});
+test('Gestione bimestrale e ricorrenza annuale',()=>{const b={frequency:'bimonthly',active:true,nextDue:'2026-01-31',anchorDay:31,amountCents:1000};assert.equal(afterPayment(b).nextDue,'2026-03-31');assert.equal(estimatedYearly(b),6000);});
+test('Ricorrenza una tantum si conclude',()=>{const r=afterPayment({frequency:'once',active:true,nextDue:'2026-11-03'});assert.equal(r.active,false);assert.equal(r.nextDue,null);});
+test('Importi in centesimi',()=>{assert.equal(parseEuros('84,70'),8470);assert.equal(parseEuros('1.234,56'),123456);assert.equal(parseEuros('120'),12000);assert.ok(Number.isNaN(parseEuros('-3')));assert.ok(Number.isNaN(parseEuros('12.345')));assert.ok(Number.isNaN(parseEuros('0')));});
+test('Nessun doppio conteggio delle scadenze nei totali',()=>{const expenses=[{date:'2026-10-01',amountCents:8470},{date:'2026-10-05',amountCents:12000},{date:'2026-09-30',amountCents:5000}];assert.equal(monthlyTotal(expenses,'2026-10'),20470);});
+test('Scadenze scadute e oggi',()=>{assert.equal(dueStatus({active:true,nextDue:'2026-10-01'},'2026-10-23'),'scaduta');assert.equal(dueStatus({active:true,nextDue:'2026-10-23'},'2026-10-23'),'oggi');});
+test('HTML non attendibile viene escapato',()=>{assert.equal(escapeHtml('<script>"</script>'),'&lt;script&gt;&quot;&lt;/script&gt;');});
+test('Cambia mese da dicembre a gennaio',()=>{assert.equal(monthShift('2026-12',1),'2027-01');});
