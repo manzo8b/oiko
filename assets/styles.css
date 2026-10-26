@@ -121,3 +121,25 @@ input,select,textarea{accent-color:#0D3B2E}
 .category-budget-settings .category-budget-list{grid-template-columns:1fr}
 .category-budget-controls{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0 0}
 @media(max-width:760px){.category-budget-list{grid-template-columns:1fr}.category-budget-panel{margin-top:14px}.category-budget-head{font-size:12px}}
+
+
+/* Oiko v0.3.1 · contrast and visual hierarchy — mobile + desktop */
+:root{--accent-warm:#FFA13F;--accent-warm-deep:#cc690d}
+.dashboard-hero h2 em{color:var(--accent-warm);font-weight:750;text-shadow:0 1px 1px rgba(0,0,0,.13)}
+.bar-label{color:#1d4535;font-weight:700}
+.bar-track{background:#e2ebe2}
+.entry{border:1px solid #dce5db!important;border-radius:15px;padding:14px 12px;margin-bottom:10px;background:#fffefb;box-shadow:0 5px 15px rgba(13,59,46,.045)}
+.entry:last-child{border:1px solid #dce5db!important;margin-bottom:0}
+.entry-icon{background:linear-gradient(145deg,#d4ead6,#bedcc4);color:#0a5c42;box-shadow:inset 0 1px 0 rgba(255,255,255,.55)}
+.entry-title{color:#17392d;font-weight:790}
+.entry-sub{color:#536c5f;font-weight:550}
+.entry-price{color:#0b3e2e;font-weight:800}
+.bill-card{border:1px solid #dce5db!important;border-radius:16px;padding:16px 13px;margin-bottom:10px;background:#fffefb;box-shadow:0 5px 15px rgba(13,59,46,.045)}
+.bill-card:last-child{border:1px solid #dce5db!important;margin-bottom:0}
+.bill-meta{color:#526b5e;font-weight:550}
+.pill{background:#dceee1;color:#0e5a41;border:1px solid #c4dfca;font-weight:800}
+.pill.overdue{background:#fff0e8;color:#a0432c;border-color:#f1d2c6}
+.pill.today{background:#fff1dc;color:#87530b;border-color:#f3dcac}
+.row-list{display:flex;flex-direction:column;gap:10px}
+.category-budget-item{background:#fffefb;border-color:#dce5db;box-shadow:0 5px 15px rgba(13,59,46,.035)}
+.bottom-nav .nav-link.active{background:#dceee1;color:#0d3b2e}
