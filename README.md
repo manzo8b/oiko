@@ -1,100 +1,24 @@
-# Oiko · v0.5.0 (GitHub Pages)
+# Oiko v0.5.1 — Dashboard e grafici
 
-**La tua casa è OK**
+Questa versione conserva **la palette Oiko v0.5**, il database IndexedDB e il formato di backup JSON v1.
 
-Versione v0.3 della micro-app Oiko, con identità visiva verde bosco e controllo dei budget di categoria. Il progetto integra le **12 categorie** della specifica v1.1 (supermercato, abbigliamento, farmacia, odontologia, pedicure e altre spese comprese) e può essere pubblicato come sito statico su **GitHub Pages**.
+## Miglioramenti
 
-## Budget per categoria (v0.3)
+- Dashboard smartphone più compatta, informazioni principali più visibili senza scorrere attraverso un riquadro decorativo molto alto.
+- Diagramma ad anello per le prime quattro categorie più «Altre categorie», con importi e quote del mese; i valori provengono unicamente dalle spese registrate.
+- Barre di categoria espresse come percentuale del **totale mensile**, non della categoria più elevata. Valore in euro e quota percentuale sono entrambi visibili.
+- Confronto a sei mesi con importo per ogni mese, mesi senza spese rappresentati come zero, mese selezionato evidenziato in giallo.
+- Pulsante mobile rapido visibile solo nella sezione Spese; pulsante «Registra una spesa» sempre presente nel riquadro della dashboard.
+- Nessuna nuova raccolta di dati, nessun account, nessuna sincronizzazione, nessun pagamento eseguito da Oiko.
 
-In **Impostazioni → Budget per categoria** scegli una delle 12 categorie, inserisci un limite mensile in euro e premi **Salva limite**. Il limite è facoltativo e si applica a tutti i mesi del registro: viene confrontato soltanto con le spese effettivamente registrate. Puoi modificarlo o rimuoverlo in qualunque momento. **Oggi** mostra fino a quattro categorie monitorate e **Report** le mostra tutte, segnalando gli sforamenti. Un superamento non impedisce di registrare nuove spese.
+## Controlli
 
-**Compatibilità:** i nuovi limiti sono archiviati nelle preferenze esistenti, non richiedono un nuovo database. I backup JSON `oiko-backup` v1 precedenti possono ancora essere importati; il nuovo campo `categoryBudgetsCents` è facoltativo. L’importazione completa continua a sostituire tutti i dati locali.
+Eseguire `npm test`. Nella v0.5.1 vengono verificati 44 test automatici. La visualizzazione è stata collaudata con dati fittizi in browser su schermi da 350 px, 390 px e 1365 px, mediante simulazione dell'archivio applicativo (non test diretto di Safari iPhone o IndexedDB). Non è stato alterato il database locale dei dispositivi degli utenti.
 
-## Identità visiva v0.5
+## Privacy e continuità
 
-Palette: viola brand `#6945EE`, navy `#171536`, giallo `#FFD04A`, base `#F7F7FC`. I colori verde, arancione e rosso segnalano rispettivamente pagamenti positivi, avvisi e scaduti.
+I dati risiedono nella memoria locale del browser (IndexedDB). Prima di cancellare la PWA o i dati del sito esportare e custodire il backup JSON in una destinazione sicura. Il contenuto del backup può essere riservato e non va pubblicato su GitHub. La v0.5.1 modifica solo l'interfaccia e le etichette: schema `oiko-local-v1`, versione `1`, e JSON `oiko-backup`, versione `1`, invariati.
 
-## Cosa funziona
+## Pubblicazione GitHub Pages
 
-- Dashboard mensile con importi pagati, previsioni, scaduti e budget disponibile.
-- Registro spese con creazione, modifica, eliminazione, ricerca, filtri per categoria e mese.
-- Scadenze una tantum, mensili, bimestrali, trimestrali, semestrali, annuali con conferma manuale di pagamento.
-- Calcolo delle date ricorrenti con giorno originario preservato, anche a febbraio.
-- Report per categoria e andamento su sei mesi; stima annua ricorrenze attive.
-- 12 categorie da `data/categories.json`, con aggiunta di sottocategorie personalizzate.
-- PDF o immagini di ricevute (max 5 MB ciascuno), salvati in IndexedDB; download dal registro.
-- Backup JSON con allegati inclusi, ripristino con sostituzione dell'archivio e CSV delle spese.
-- Link HTTPS al portale del fornitore, inseriti dall'utente, senza alcuna conferma automatica di pagamento.
-- Dati dimostrativi attivabili soltanto quando il registro è vuoto.
-- Interfaccia responsive, con navigazione inferiore sul cellulare e barra laterale su desktop.
-
-> **Collaudo:** test automatici completati; su Safari iPhone sono stati verificati inserimento, persistenza, esportazione e ripristino di spese di prova. Il test va ripetuto dopo il rilascio della nuova interfaccia. Vedi `QA_REPORT.md` e `COLLAUDO_IPHONE.md`.
-
-## Come provarla
-
-Non aprire direttamente `index.html` come file (`file://`): le risorse ES module richiedono un server web.
-
-```bash
-cd Oiko_v0_3
-python3 -m http.server 8000
-```
-
-Apri `http://localhost:8000/` nel browser. Per il telefono puoi pubblicare su GitHub Pages oppure usare un server locale raggiungibile sulla rete domestica, adottando precauzioni appropriate.
-
-## Pubblicare su GitHub Pages
-
-1. Crea un nuovo repository dedicato (esempio `oiko`).
-2. Carica **il contenuto** di questa cartella nella radice del repository (`index.html`, `assets/`, `data/`, `.nojekyll`, ecc.).
-3. Vai in **Settings → Pages → Build and deployment**, seleziona **Deploy from a branch**.
-4. Seleziona `main`, cartella `/ (root)`, salva.
-5. Il sito sarà raggiungibile al percorso indicato da GitHub Pages, spesso `https://<username>.github.io/oiko/`.
-
-`.nojekyll` impedisce che un processo Jekyll modifichi le risorse statiche. Oiko non richiede npm, server, database remoto o chiavi API per funzionare.
-
-## Modello dati e regole
-
-- `expenses`: spese pagate, in euro interi convertiti in centesimi.
-- `bills`: scadenze previste, non considerate spese finché non premi «Registra pagamento» e salvi.
-- `attachments`: Blob di ricevute PDF o immagini.
-- `preferences`: budget, sottocategorie aggiunte, indicazione dati demo.
-
-Le date sono ISO (`YYYY-MM-DD`). Una scadenza del 31 gennaio mensile diventa 28/29 febbraio, poi 31 marzo quando viene registrato il pagamento del mese successivo. Una scadenza «Una volta» diventa inattiva quando pagata. I pagamenti collegati alla scadenza rimangono nel registro anche se il promemoria viene eliminato. Se elimini un pagamento già registrato, **la scadenza non viene riaperta automaticamente**: correggi la data manualmente se necessario.
-
-## Backup e privacy
-
-**Le informazioni restano nel browser del dispositivo** grazie a IndexedDB. Non esiste un account Oiko o una sincronizzazione multi-dispositivo. La pulizia dei dati del sito, l'uso della modalità privata, i limiti di spazio o alcuni criteri del browser possono cancellare l'archivio. Il pulsante «Richiedi conservazione persistente» aiuta dove supportato, ma **non sostituisce i backup**.
-
-La funzione di backup include gli allegati in base64, quindi il JSON può essere grande e contenere dati privati. Non salvarlo in repository GitHub pubblici né inviarlo a sconosciuti. In MVP il backup supporta al massimo 30 MB di allegati complessivi per importazione. Per farmacisti e odontoiatria si suggerisce di registrare importi e categorie evitando diagnosi, referti e prescrizioni. Oiko non raccoglie carte, password, IBAN né credenziali bancarie.
-
-## Limiti voluti
-
-- Nessuna verifica bancaria o pagamento effettuato da Oiko.
-- Nessun promemoria push quando l'app è chiusa: le scadenze sono visibili all'apertura.
-- Nessuna sincronizzazione fra smartphone e computer.
-- Nessun OCR, scansione automatica di fatture o estrazione degli importi.
-- Nessuna ripartizione di un singolo scontrino tra più categorie (possibile evoluzione).
-- I link ai fornitori sono definiti dall'utente e non convalidati come ufficiali dall'app: inserire soltanto URL HTTPS già controllati.
-- L'archivio non è cifrato con una chiave indipendente dal browser.
-
-## Test
-
-```bash
-npm test
-```
-
-I test unitari coprono calcoli monetari, calendario ricorrenze, classificazione scadenze, escaping HTML e assenza di doppi conteggi. Verificare inoltre manualmente i flussi su Safari iPhone e Chrome Android prima dell'uso quotidiano.
-
-## Roadmap senza nuovi progetti
-
-Le prossime iterazioni sono **dello stesso progetto Oiko**: verifica Safari iOS, gestione migliore degli allegati e accessibilità, categorie configurabili, eventuale sincronizzazione familiare con backend progettato separatamente e solo se necessaria. Non occorre integrare sistemi bancari per completare l'MVP.
-
-## Licenza
-
-Nessuna licenza pubblica è stata assegnata. Prima di rendere il codice riutilizzabile da terzi, scegliere esplicitamente una licenza.
-
-
-## Scadenze intelligenti — v0.5
-
-La sezione **Scadenze** mostra importi previsti nei prossimi 7 e 30 giorni (giorno corrente incluso), quelli già scaduti e lo storico dei pagamenti registrati. Le finestre sono cumulative: i 30 giorni comprendono i primi 7. I pagamenti nello storico provengono da spese associate a una scadenza (`billId`, `dueDate`); non sono creati automaticamente. Se una occorrenza è già stata registrata come pagata, Oiko non la considera di nuovo «da pagare», anche se la data del promemoria è rimasta invariata. Non sono previste notifiche automatiche.
-
-Nelle previsioni è conteggiata **la prossima occorrenza** per ogni promemoria attivo; non vengono generate in anticipo tutte le ricorrenze future senza conferma del pagamento precedente.
+Caricare i file nella radice del repository, branch `main`, con Pages su `main / (root)`. La versione pubblica è https://manzo8b.github.io/oiko/. Non occorre reinstallare l'icona Home e non bisogna cancellare la cache o i dati per aggiornare. Per verificare colori e grafici aprire Oiko dall'icona originale, mantenendo la stessa origine.

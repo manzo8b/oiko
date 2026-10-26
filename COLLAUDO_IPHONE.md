@@ -1,12 +1,13 @@
-# Oiko v0.4 · Test rapido Safari iPhone
+# Oiko v0.5.1 · verifica su iPhone
 
-1. Apri Oiko dalla **stessa icona Home**, senza reinstallarla, e controlla che le spese e i budget precedenti ci siano ancora.
-2. Verifica il nuovo arancione di «Meno pensieri» e il contrasto delle righe negli elenchi.
-3. Apri **Scadenze**: verifica le tre card (7 giorni, 30 giorni, già scadute).
-4. Premi **7 giorni**, poi **30 giorni**: i 30 giorni includono i primi 7; i già scaduti non devono comparire in queste due viste.
-5. Premi **Scadute**: vengono mostrate solo le scadenze precedenti a oggi.
-6. Premi **Pagate**: sono visibili solo i pagamenti già confermati da una scadenza, non le bollette non pagate.
-7. Usa una scadenza **di prova** e registra manualmente il pagamento: appare nel registro Spese e in Pagate, mentre la scadenza avanza secondo la sua periodicità.
-8. Chiudi e riapri l'app: le spese devono essere conservate. Esporta un backup senza sostituire i dati.
+Usa Oiko dalla stessa icona Home. Prima di eventuali operazioni invasive fai un backup.
 
-**Importante:** non disinstallare l'app e non premere ripristino/svuotamento se contiene spese reali. Il backup completo può contenere dati privati. Le scadenze sono promemoria manuali, non addebiti automatici; non sono previste notifiche push.
+1. Controlla che siano presenti le spese già salvate.
+2. In Oggi verifica il nuovo grafico ad anello con legenda e importi del mese.
+3. Controlla che la dashboard verde **non** ricompaia: la palette resta viola e giallo.
+4. Il pulsante flottante non deve coprire il grafico in Oggi; lo trovi nella sezione Spese.
+5. In Report verifica che la barra di ogni categoria esprima la sua quota sul totale.
+6. Verifica i sei importi mensili sopra le barre: i mesi senza spese devono restare a zero.
+7. Chiudi e riapri Oiko; conferma che le spese non sono scomparse.
+
+Non cancellare o reinstallare l'app per un semplice aggiornamento visuale.

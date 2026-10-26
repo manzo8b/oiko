@@ -21,3 +21,13 @@
 - [x] Storico pagato derivato da `expenses[].billId` e `dueDate` (test)
 - [x] Filtri desktop/mobile tramite browser simulato (350/390/1365px)
 - [ ] Safari iPhone reale e backup dopo la pubblicazione
+
+
+## Regressione v0.5.1
+
+- Grafici basati solo sulle spese pagate
+- Quote percentuali calcolate rispetto al totale mensile
+- Categoria «Altre» per l'eventuale residuo oltre le prime quattro
+- Anello e andamento gestiscono mesi vuoti senza dati inventati
+- Il tasto rapido non copre la dashboard
+- Le voci e gli importi rimangono in IndexedDB, non sono eliminati dal redesign

@@ -1,3 +1,12 @@
+## v0.5.1 — Dashboard e grafici più leggibili — 26 ottobre 2026
+
+- Dashboard mobile più compatta: dati principali visibili prima, senza sacrificare la palette v0.5.
+- Nuovo grafico ad anello con quattro categorie principali, residuo aggregato e importi assoluti.
+- Barre di categoria espresse esplicitamente come quota percentuale delle spese del mese.
+- Andamento sei mesi con importi visibili, zero reale e mese selezionato evidenziato.
+- Pulsante flottante «Nuova spesa» limitato alla sezione Spese, per non coprire i grafici della dashboard.
+- Nessuna migrazione dei dati, nessun cambiamento a backup o categorie.
+
 ## v0.5.0 — Identità viola e giallo — 26 ottobre 2026
 
 - Nuovo design system: viola di brand, giallo di accento, fondi neutri e colori semantici per pagato/in arrivo/scaduto.

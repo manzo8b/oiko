@@ -372,3 +372,63 @@ input,select,textarea{accent-color:#6945EE}
   .stat-card,.panel{border-color:#E3E4F0}
 }
 @media(prefers-reduced-motion:reduce){.sidebar .nav-link,.button{transition:none}}
+
+
+/* Oiko v0.5.1 · dashboard and truthful, accessible data visualization */
+.spending-overview{display:grid;grid-template-columns:minmax(145px,200px) minmax(0,1fr);align-items:center;gap:24px;padding:6px 0 10px}
+.donut-wrap{display:flex;align-items:center;justify-content:center;min-width:0}
+.spending-donut{width:min(100%,190px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;box-shadow:0 7px 20px rgba(68,50,142,.09)}
+.donut-hole{width:68%;height:68%;background:#fff;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;text-align:center;padding:10px;box-shadow:inset 0 0 0 1px #EDEAF5}
+.donut-hole span{font-weight:820;color:#75738E;font-size:9px;letter-spacing:1px}
+.donut-hole strong{font-size:clamp(15px,1.5vw,22px);font-variant-numeric:tabular-nums;color:#211941;letter-spacing:-.8px;white-space:nowrap}
+.donut-legend{display:grid;gap:2px;min-width:0}
+.donut-legend-item{display:grid;grid-template-columns:minmax(0,1fr) 38px auto;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #EFEFF7;font-size:12px}
+.donut-legend-item:last-child{border-bottom:0}
+.donut-label{display:flex;align-items:center;gap:9px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:650;color:#302B52}
+.category-dot{display:inline-block;width:10px;height:10px;flex:none;border-radius:3px}
+.donut-percent{color:#604F9C;font-weight:800;font-variant-numeric:tabular-nums}
+.donut-legend-item strong{color:#252142;font-size:12px;font-weight:760;font-variant-numeric:tabular-nums;white-space:nowrap}
+.chart-explainer{margin:14px 0 0;color:#6A6880;font-size:11px;line-height:1.5}
+/* Percentages in category bars are the share of total, not scaled against the largest expense */
+.bar-row{display:grid;grid-template-columns:1fr auto;gap:7px 12px;margin:12px 0 17px}
+.bar-row-head{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.bar-label{font-size:12px;display:flex;gap:7px;align-items:center;min-width:0;font-weight:680;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-amount{color:#252143;font-size:12px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar-track{grid-column:1;grid-row:auto;height:10px;border-radius:99px;background:#EBEAF5;overflow:hidden}
+.bar-fill{height:100%;border-radius:99px}
+.bar-share{grid-column:2;font-size:11px;color:#625990;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:720}
+.trend-chart{padding:7px 0 16px}
+.trend-chart-caption{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#514970;font-size:11px}
+.trend-chart-caption strong{color:#29234D}
+.trend-bars{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;align-items:end;min-height:195px;height:auto;border-bottom:1px solid #DCD9EA;padding:10px 2px 0;margin-top:10px}
+.trend-col{min-width:0;height:auto;display:grid;grid-template-rows:22px 132px 26px;justify-items:center;align-items:end;gap:0}
+.trend-amount{font-weight:740;font-size:clamp(9px,.9vw,12px);color:#4C446F;letter-spacing:-.25px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.trend-col.is-current .trend-amount{color:#6040DA;font-weight:850}
+.trend-bar-space{height:132px;width:100%;display:flex;justify-content:center;align-items:flex-end;position:relative;background:linear-gradient(0deg,transparent calc(50% - 1px),#F2F0F9 calc(50% - 1px),#F2F0F9 50%,transparent 50%)}
+.trend-bar{width:min(43px,72%);background:linear-gradient(180deg,#A58CFA,#7654ED);border-radius:7px 7px 0 0;min-height:0;box-shadow:none}
+.trend-bar.current{background:linear-gradient(180deg,#F9C34E,#EE9840)}
+.trend-col small{font-size:11px;color:#6E668A;font-weight:650;text-transform:capitalize}
+@media(max-width:1120px){.spending-overview{grid-template-columns:minmax(145px,185px) minmax(0,1fr)}}
+@media(max-width:760px){
+  .dashboard-hero{padding:18px 18px 16px;gap:11px;border-radius:22px}
+  .dashboard-hero .kicker{font-size:9px;margin-bottom:6px}
+  .dashboard-hero h2{font-size:clamp(25px,6.8vw,29px);line-height:1.1;margin-bottom:0}
+  .dashboard-hero .hero-copy>p:not(.kicker){display:none}
+  .dashboard-hero .hero-actions{margin-top:12px}
+  .dashboard-hero .hero-secondary{display:none}
+  .dashboard-hero .hero-primary{min-height:37px;padding:8px 12px;font-size:12px}
+  .dashboard-hero .hero-figure{padding:12px 14px;min-width:0}
+  .hero-figure-value{font-size:clamp(26px,7.5vw,32px);margin:5px 0 7px}
+  .hero-figure-label{font-size:9px;letter-spacing:1px}
+  .hero-budget-row{font-size:10px}.hero-budget-track{margin:7px 0 5px}
+  .hero-figure-help{font-size:10px}
+  .spending-overview{grid-template-columns:1fr;gap:12px}
+  .spending-donut{width:165px}
+  .donut-legend-item{grid-template-columns:minmax(0,1fr) 36px auto}
+  .trend-bars{gap:4px;min-height:190px}
+  .trend-col{grid-template-rows:20px 132px 26px}
+  .trend-amount{font-size:9px}
+  .bar-row{grid-template-columns:1fr auto;gap:6px 8px}
+  .bar-share{font-size:10px}
+}
+@media(max-width:380px){.donut-legend-item{font-size:11px}.donut-legend-item strong{font-size:11px}.trend-amount{font-size:8px}}

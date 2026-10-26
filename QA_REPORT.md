@@ -1,8 +1,7 @@
-# Oiko v0.5 — Rapporto QA (26 ottobre 2026)
+# QA Oiko v0.5.1 — 26 ottobre 2026
 
-- Nuova identità viola/giallo, fondi neutri e stati semantici distinti. Nessuna operazione finanziaria o schema dati modificato.
-- Test Node: 39/39 superati e moduli verificati con node --check.
-- Browser Chromium con dati simulati: dashboard, filtri Scadenze, pagamento manuale e navigazione a 350/390/1365 px; nessun errore JS, nessuno scorrimento orizzontale.
-- Il test browser usa archiviazione simulata e **non sostituisce** il collaudo dell'IndexedDB in Safari iPhone.
-- Sostituiti logo SVG e tre icone raster nella nuova palette.
-- Verifica su iPhone: aggiornamento grafico, presenza vecchie spese, filtri, backup. Non eliminare icona Home per aggiornarla.
+- **44/44 test Node superati** per logiche precedenti, versione grafica e regressioni dashboard.
+- `node --check assets/app.mjs`: superato.
+- Browser Chromium locale con **archivio simulato**: 350/390/1365 px; donut a cinque segmenti, sei mesi di trend, importi coerenti, nessun overflow orizzontale né errore JavaScript.
+- Non verificati in questa esecuzione: IndexedDB reale nel browser, Safari iPhone, conservazione dopo disinstallazione o cambio dispositivo.
+- Continuità: lo schema database e backup JSON non sono stati modificati.
