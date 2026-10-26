@@ -99,3 +99,25 @@ input,select,textarea{accent-color:#0D3B2E}
 }
 @media(max-width:350px){.bottom-nav .nav-link{font-size:9px}.stats-grid{grid-template-columns:1fr 1fr}.stat-value{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.mobile-quick-add:active{transform:none}}
+
+/* Oiko v0.3 - functional category limits */
+.category-budget-panel{margin-top:19px}
+.category-budget-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 19px}
+.category-budget-item{padding:14px;border:1px solid #e5eae2;border-radius:14px;background:#fbfcf8;min-width:0}
+.category-budget-head{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:6px 10px;font-size:12px;margin-bottom:10px}
+.category-budget-name{font-weight:700;color:#224738}
+.category-budget-head strong{white-space:nowrap;font-variant-numeric:tabular-nums;color:#123e30}
+.category-budget-of{color:#7f9183;font-weight:500}
+.category-budget-track{height:9px;border-radius:99px;background:#e4ece1;overflow:hidden}
+.category-budget-fill{display:block;height:100%;background:linear-gradient(90deg,#77a68a,#0d5b43);border-radius:inherit}
+.category-budget-item.is-over{border-color:#efd8c6;background:#fff9f2}
+.category-budget-item.is-over .category-budget-fill{background:linear-gradient(90deg,#dba54e,#bd7458)}
+.category-budget-item.is-over .category-budget-detail{color:#a6503d}
+.category-budget-detail{display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px;font-size:11px;color:#7a8b80;margin-top:8px}
+.category-budget-detail strong{color:inherit}
+.category-budget-empty{font-size:13px;color:#728276;background:#f4f7f1;border-radius:13px;padding:18px}
+.category-budget-empty button{margin-left:4px}
+.category-budget-settings h4{font-size:14px;margin:18px 0 12px;color:#194634}
+.category-budget-settings .category-budget-list{grid-template-columns:1fr}
+.category-budget-controls{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0 0}
+@media(max-width:760px){.category-budget-list{grid-template-columns:1fr}.category-budget-panel{margin-top:14px}.category-budget-head{font-size:12px}}

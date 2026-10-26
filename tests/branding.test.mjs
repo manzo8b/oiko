@@ -6,11 +6,11 @@ import {resolve,dirname} from 'node:path';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const read=(p)=>readFileSync(resolve(root,p),'utf8');
 
-test('Oiko v0.2: il claim coincide fra brand, dashboard e manifest',()=>{
+test('Oiko v0.3: il claim coincide fra brand, dashboard e manifest',()=>{
  const index=read('index.html'),app=read('assets/app.mjs'),manifest=JSON.parse(read('manifest.webmanifest'));
- assert.match(index,/LA TUA CASA È OK\./);
- assert.match(app,/La tua casa è OK\./);
- assert.match(manifest.name,/La tua casa è OK\./);
+ assert.match(index,/LA TUA CASA È OK<\/p>/);
+ assert.match(app,/La tua casa è OK/);
+ assert.match(manifest.name,/La tua casa è OK/);
 });
 
 test('Risorse installabili presenti e senza dipendenze remote',()=>{

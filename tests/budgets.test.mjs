@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {budgetUsage,categoryTotals,monthlyTotal} from '../assets/logic.mjs';
+const app=readFileSync(new URL('../assets/app.mjs',import.meta.url),'utf8');
+const db=readFileSync(new URL('../assets/db.mjs',import.meta.url),'utf8');
+const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+test('Calcolo budget categoria sotto soglia',()=>{assert.deepEqual(budgetUsage(8474,20000),{spentCents:8474,budgetCents:20000,remainingCents:11526,percent:42,exceeded:false});});
+test('Categoria con limite superato non blocca il conteggio',()=>{const b=budgetUsage(12000,10000);assert.equal(b.remainingCents,-2000);assert.equal(b.percent,120);assert.equal(b.exceeded,true);});
+test('Budget zero invalido e saldo perfettamente uguale alla soglia',()=>{assert.throws(()=>budgetUsage(0,0));assert.equal(budgetUsage(5000,5000).exceeded,false);});
+test('Budget categoria usa solo spese pagate del mese',()=>{const rows=[{date:'2026-10-26',categoryId:'casa-utenze',amountCents:7800},{date:'2026-10-20',categoryId:'supermercato-alimentari',amountCents:8474},{date:'2026-09-30',categoryId:'casa-utenze',amountCents:5600}];assert.deepEqual(categoryTotals(rows,'2026-10'),{'casa-utenze':7800,'supermercato-alimentari':8474});assert.equal(monthlyTotal(rows,'2026-10'),16274);});
+test('Schema IndexedDB e formato backup version 1 invariati',()=>{assert.match(db,/DB_NAME='oiko-local-v1', DB_VERSION=1/);assert.match(app,/format:'oiko-backup',version:1/);});
+test('Budget per categoria e navigazione implementati in UI',()=>{assert.match(app,/id="category-budget-form"/);assert.match(app,/case 'remove-category-budget'/);assert.match(app,/categoryBudgetRows\(month/);assert.match(app,/categoryBudgetsCents/);});
+test('I titoli e i logotipi non terminano con il punto',()=>{assert.doesNotMatch(app,/<h2>Più controllo\./);assert.doesNotMatch(app,/'La tua casa è OK\.'/);assert.doesNotMatch(html,/<span class="brand-dot">\.<\/span>/);assert.doesNotMatch(html,/LA TUA CASA È OK\./);});

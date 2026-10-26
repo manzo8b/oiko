@@ -1,8 +1,14 @@
-# Oiko · v0.2.0 (GitHub Pages)
+# Oiko · v0.3.0 (GitHub Pages)
 
-**La tua casa è OK.**
+**La tua casa è OK**
 
-Versione v0.2 della micro-app Oiko, con nuova identità visiva e navigazione rapida. Il progetto integra le **12 categorie** della specifica v1.1 (supermercato, abbigliamento, farmacia, odontologia, pedicure e altre spese comprese) e può essere pubblicato come sito statico su **GitHub Pages**.
+Versione v0.3 della micro-app Oiko, con identità visiva verde bosco e controllo dei budget di categoria. Il progetto integra le **12 categorie** della specifica v1.1 (supermercato, abbigliamento, farmacia, odontologia, pedicure e altre spese comprese) e può essere pubblicato come sito statico su **GitHub Pages**.
+
+## Budget per categoria (v0.3)
+
+In **Impostazioni → Budget per categoria** scegli una delle 12 categorie, inserisci un limite mensile in euro e premi **Salva limite**. Il limite è facoltativo e si applica a tutti i mesi del registro: viene confrontato soltanto con le spese effettivamente registrate. Puoi modificarlo o rimuoverlo in qualunque momento. **Oggi** mostra fino a quattro categorie monitorate e **Report** le mostra tutte, segnalando gli sforamenti. Un superamento non impedisce di registrare nuove spese.
+
+**Compatibilità:** i nuovi limiti sono archiviati nelle preferenze esistenti, non richiedono un nuovo database. I backup JSON `oiko-backup` v1 precedenti possono ancora essere importati; il nuovo campo `categoryBudgetsCents` è facoltativo. L’importazione completa continua a sostituire tutti i dati locali.
 
 ## Cosa funziona
 
@@ -25,7 +31,7 @@ Versione v0.2 della micro-app Oiko, con nuova identità visiva e navigazione rap
 Non aprire direttamente `index.html` come file (`file://`): le risorse ES module richiedono un server web.
 
 ```bash
-cd Oiko_MVP_v0_1
+cd Oiko_v0_3
 python3 -m http.server 8000
 ```
 

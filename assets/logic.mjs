@@ -30,3 +30,5 @@ export function afterPayment(bill){if(!(bill.frequency in FREQUENCIES))throw new
 export function estimatedYearly(bill){if(!bill.active || bill.frequency==='once')return 0;return Math.round(bill.amountCents*12/FREQUENCIES[bill.frequency]);}
 export function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 export function safeExternalUrl(s){if(!s)return '';try{const url=new URL(s);return url.protocol==='https:' && url.hostname && !url.username && !url.password ? url.href : '';}catch{return '';}}
+
+export function budgetUsage(spentCents,budgetCents){if(!Number.isSafeInteger(spentCents)||spentCents<0||!Number.isSafeInteger(budgetCents)||budgetCents<=0)throw new Error('Importi del budget non validi');const remainingCents=budgetCents-spentCents;return {spentCents,budgetCents,remainingCents,percent:Math.round(spentCents*100/budgetCents),exceeded:remainingCents<0};}

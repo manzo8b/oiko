@@ -1,3 +1,14 @@
+# Changelog
+
+## 0.3.0 — 26 ottobre 2026
+- Rimossi i punti finali da titoli, intestazioni e logotipo mobile/desktop.
+- Budget mensili facoltativi per le 12 categorie principali, con modifica e cancellazione in Impostazioni.
+- Riepilogo delle soglie nella dashboard e confronto completo nel Report: speso, residuo, percentuale, superamento.
+- Nessun blocco della registrazione quando un limite viene superato.
+- Nessuna migrazione IndexedDB: schema `oiko-local-v1` versione 1 invariato.
+- Backup JSON v1 invariato, comprende automaticamente i limiti nella preferenza `categoryBudgetsCents`; compatibile con backup precedenti senza questa proprietà.
+- Test automatici per soglie, calcoli, titoli e compatibilità archivi.
+
 # Changelog Oiko
 
 ## v0.2.0 — Identità visiva e rapidità operativa (2026-10-26)
