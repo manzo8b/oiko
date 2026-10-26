@@ -167,3 +167,82 @@ input,select,textarea{accent-color:#0D3B2E}
 @media(max-width:355px){.deadline-summary{grid-template-columns:1fr}.deadline-summary-card{flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap}.deadline-dashboard-metrics{grid-template-columns:1fr}.deadline-dashboard-item{flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap}}
 
 .mobile-quick-add[hidden]{display:none!important}
+
+/* Oiko 0.4.1 — vivid, restrained data surfaces (no data-model changes) */
+:root {
+  --line-data: #D7E1DA;
+  --line-strong: #C8D6CC;
+  --line-soft: #DDE7E0;
+  --track-data: #DDE8E0;
+  --sage-data: #EEF5EF;
+  --sage-active: #EAF3EC;
+  --ink-secondary-data: #4F695C;
+  --warning-bg-data: #FFF0D8;
+  --warning-text-data: #87530B;
+  --overdue-bg-data: #FDECE4;
+  --overdue-text-data: #9E4228;
+}
+/* Surfaces, strokes and numerals */
+.panel, .stat-card, .full-panel, .settings-card {
+  border-color: var(--line-data);
+  box-shadow: 0 8px 24px rgba(13,59,46,.055);
+}
+.stat-card:before { width: 4px; background: #7FAF91; }
+.stat-card.alert:before { background: #C66F50; }
+.stat-card.good:before { background: #21835C; }
+.stat-label, .stat-hint, .report-sub, .summary-mini { color: var(--ink-secondary-data); }
+.stat-value, .report-total, .report-row strong { color: #0B3E2E; }
+.panel-header, .modal-head, .form-actions { border-color: var(--line-soft); }
+.bar-label, .bar-value { color: #153C2B; font-weight: 750; }
+.bar-track, .category-budget-track { background: var(--track-data); }
+.bar-fill { filter: saturate(1.32) contrast(1.06); box-shadow: inset 0 -1px 0 rgba(0,0,0,.08); }
+.category-budget-fill { background: linear-gradient(90deg,#63A77D,#0D5B43); }
+.category-budget-item.is-over .category-budget-fill { background: linear-gradient(90deg,#DF9B3C,#BF654A); }
+.trend-bars { border-bottom-color: var(--line-strong); }
+.trend-bar { background: #6FAD8E; }
+.trend-bar.current { background: #0D5B43; }
+/* Transaction lists: precise boundaries rather than a grey haze */
+.entry, .entry:last-child, .bill-card, .bill-card:last-child {
+  border-color: var(--line-strong)!important;
+  background: #FFFEFA;
+  box-shadow: 0 5px 14px rgba(13,59,46,.05);
+}
+.entry-icon { background: #DDEEE0; color: #0D5B43; }
+.entry-title { color: #133D2D; }
+.entry-sub, .bill-meta { color: var(--ink-secondary-data); }
+.entry-price, .bill-amount strong { color: #0B3E2E; font-variant-numeric: tabular-nums; }
+@media (hover:hover) {
+  .entry:hover, .bill-card:hover { background: #F3F8F4; border-color: #A8C6B4!important; }
+}
+.report-row { border-color: var(--line-data); border-radius: 8px; padding-inline: 9px; }
+.report-row:nth-child(even) { background: #F5F9F5; }
+/* Clear semantics: planned, due today, overdue, confirmed */
+.pill { background: #E5F1E7; border-color: #BEDBC5; color: #1F5B46; }
+.pill.today { background: var(--warning-bg-data); border-color: #EBD19F; color: var(--warning-text-data); }
+.pill.overdue { background: var(--overdue-bg-data); border-color: #E8C0B2; color: var(--overdue-text-data); }
+.pill.done { background: #EEF1EE; border-color: #D0DBD2; color: #536D5D; }
+/* Smart-deadline tables, filters and summary cards */
+.deadline-summary-card, .deadline-dashboard { border-color: var(--line-data); }
+.deadline-summary-card { background: #FFFEFA; }
+.deadline-summary-card.has-overdue, .deadline-dashboard-item.is-overdue {
+  background: #FFF1E7; border-color: #E7C6B3;
+}
+.deadline-summary-card.has-overdue strong, .deadline-dashboard-item.is-overdue strong { color: #A14A2B; }
+.deadline-dashboard-item { background: var(--sage-data); border-color: var(--line-strong); }
+.deadline-dashboard-item span, .deadline-summary-card span { color: #3B6450; }
+.deadline-tab { border-color: var(--line-strong); background: #FFFEFA; color: #214F38; }
+.deadline-tab span { background: #DFEDE2; color: #1B513A; }
+.deadline-tab.active { background: #0D5B43; border-color: #0D5B43; color: white; }
+.deadline-tab.active span { background: #26785A; color: white; }
+.category-budget-item { background: #FFFEFA; border-color: var(--line-data); }
+.category-budget-item.is-over { background: #FFF5EE; border-color: #E9C5B0; }
+.category-budget-name, .category-budget-head strong { color: #153D2D; }
+.category-budget-detail { color: var(--ink-secondary-data); }
+/* Stronger navigation and field dividers without extra decoration */
+.field-inline, .form-field input, .form-field select, .form-field textarea { border-color: var(--line-strong); }
+.bottom-nav { border-top-color: var(--line-strong); }
+.bottom-nav .nav-link.active { background: var(--sage-active); color: #0D5B43; }
+@media (max-width:760px) {
+  .panel, .stat-card { border-color: var(--line-data); }
+  .deadline-dashboard-item { border-color: var(--line-strong); }
+}
