@@ -1,7 +1,14 @@
+## v0.5.0 — Identità viola e giallo — 26 ottobre 2026
+
+- Nuovo design system: viola di brand, giallo di accento, fondi neutri e colori semantici per pagato/in arrivo/scaduto.
+- Dashboard, pulsanti, navigazione, liste, grafici, scadenze, budget e campi aggiornati visivamente.
+- Icone Home e logo nel colore viola, mantenendo il simbolo casa/grafico di Oiko.
+- Nessun aggiornamento dello schema IndexedDB o del formato dei backup, nessuna funzione finanziaria modificata.
+
 ## v0.4.1 — Contrasto cromatico di dati e tabelle — 26 ottobre 2026
 
 - Colori più vivi per progress bar, grafici, elenchi, card e separatori, con arancione riservato a segnali e accenti.
-- Badge distinti per da pagare, oggi, scaduto e pagato.
+- Badge semanticamente distinti: da pagare, oggi, scaduto, pagato.
 - Migliorata la leggibilità di importi, etichette e filtri su mobile e desktop.
 - Modifica esclusivamente estetica: nessuna variazione a IndexedDB, backup o logica delle scadenze.
 

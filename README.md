@@ -1,4 +1,4 @@
-# Oiko · v0.4.0 (GitHub Pages)
+# Oiko · v0.5.0 (GitHub Pages)
 
 **La tua casa è OK**
 
@@ -9,6 +9,10 @@ Versione v0.3 della micro-app Oiko, con identità visiva verde bosco e controllo
 In **Impostazioni → Budget per categoria** scegli una delle 12 categorie, inserisci un limite mensile in euro e premi **Salva limite**. Il limite è facoltativo e si applica a tutti i mesi del registro: viene confrontato soltanto con le spese effettivamente registrate. Puoi modificarlo o rimuoverlo in qualunque momento. **Oggi** mostra fino a quattro categorie monitorate e **Report** le mostra tutte, segnalando gli sforamenti. Un superamento non impedisce di registrare nuove spese.
 
 **Compatibilità:** i nuovi limiti sono archiviati nelle preferenze esistenti, non richiedono un nuovo database. I backup JSON `oiko-backup` v1 precedenti possono ancora essere importati; il nuovo campo `categoryBudgetsCents` è facoltativo. L’importazione completa continua a sostituire tutti i dati locali.
+
+## Identità visiva v0.5
+
+Palette: viola brand `#6945EE`, navy `#171536`, giallo `#FFD04A`, base `#F7F7FC`. I colori verde, arancione e rosso segnalano rispettivamente pagamenti positivi, avvisi e scaduti.
 
 ## Cosa funziona
 
@@ -89,7 +93,7 @@ Le prossime iterazioni sono **dello stesso progetto Oiko**: verifica Safari iOS,
 Nessuna licenza pubblica è stata assegnata. Prima di rendere il codice riutilizzabile da terzi, scegliere esplicitamente una licenza.
 
 
-## Scadenze intelligenti — v0.4
+## Scadenze intelligenti — v0.5
 
 La sezione **Scadenze** mostra importi previsti nei prossimi 7 e 30 giorni (giorno corrente incluso), quelli già scaduti e lo storico dei pagamenti registrati. Le finestre sono cumulative: i 30 giorni comprendono i primi 7. I pagamenti nello storico provengono da spese associate a una scadenza (`billId`, `dueDate`); non sono creati automaticamente. Se una occorrenza è già stata registrata come pagata, Oiko non la considera di nuovo «da pagare», anche se la data del promemoria è rimasta invariata. Non sono previste notifiche automatiche.
 
