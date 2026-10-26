@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="19" fill="#286a59"/><path d="M14 31 32 16l18 15M21 28v21h22V28M29 49V35h8v14" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Oiko">
+<rect x="0" y="0" width="64" height="64" rx="16" fill="#0D3B2E"/>
+<path d="M12 30.8 32 14.5 52 30.8V50.5H12V30.8Z" fill="#FFFFFF"/>
+<path d="M10.7 30.6 32 13.2l21.3 17.4" fill="none" stroke="#FAF7F1" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.5 48.2V39a4 4 0 0 1 8 0v9.2Zm10.2 0V32.5a4 4 0 0 1 8 0v15.7Z" fill="#90AF91"/>
+<path d="M38.9 48.2V35.8a4 4 0 0 1 8 0v12.4Z" fill="#0D3B2E"/>
+<circle cx="44.4" cy="26.7" r="5.25" fill="#D4AF6A"/>
+</svg>

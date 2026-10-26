@@ -1,0 +1,25 @@
+{
+  "name": "Oiko · La tua casa è OK.",
+  "short_name": "Oiko",
+  "description": "Le spese di casa in ordine, sul tuo dispositivo.",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FAF7F1",
+  "theme_color": "#0D3B2E",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

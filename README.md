@@ -1,8 +1,8 @@
-# Oiko · v0.1.1 (candidato al test su GitHub Pages)
+# Oiko · v0.2.0 (GitHub Pages)
 
-**La tua casa, le tue spese, in perfetto ordine.**
+**La tua casa è OK.**
 
-Prima versione navigabile della micro-app Oiko. Il progetto integra le **12 categorie** della specifica v1.1 (supermercato, abbigliamento, farmacia, odontologia, pedicure e altre spese comprese) e può essere pubblicato come sito statico su **GitHub Pages**.
+Versione v0.2 della micro-app Oiko, con nuova identità visiva e navigazione rapida. Il progetto integra le **12 categorie** della specifica v1.1 (supermercato, abbigliamento, farmacia, odontologia, pedicure e altre spese comprese) e può essere pubblicato come sito statico su **GitHub Pages**.
 
 ## Cosa funziona
 
@@ -18,7 +18,7 @@ Prima versione navigabile della micro-app Oiko. Il progetto integra le **12 cate
 - Dati dimostrativi attivabili soltanto quando il registro è vuoto.
 - Interfaccia responsive, con navigazione inferiore sul cellulare e barra laterale su desktop.
 
-> **Rilascio di prova:** sono stati eseguiti test automatici della logica e dei file statici. IndexedDB reale e Safari iPhone restano da verificare dopo il deploy. Vedi `QA_REPORT.md`, `DEPLOY_GITHUB_PAGES.md` e `COLLAUDO_IPHONE.md`.
+> **Collaudo:** test automatici completati; su Safari iPhone sono stati verificati inserimento, persistenza, esportazione e ripristino di spese di prova. Il test va ripetuto dopo il rilascio della nuova interfaccia. Vedi `QA_REPORT.md` e `COLLAUDO_IPHONE.md`.
 
 ## Come provarla
 
