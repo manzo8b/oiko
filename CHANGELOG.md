@@ -1,3 +1,10 @@
+## v0.4.1 — Contrasto cromatico di dati e tabelle — 26 ottobre 2026
+
+- Colori più vivi per progress bar, grafici, elenchi, card e separatori, con arancione riservato a segnali e accenti.
+- Badge distinti per da pagare, oggi, scaduto e pagato.
+- Migliorata la leggibilità di importi, etichette e filtri su mobile e desktop.
+- Modifica esclusivamente estetica: nessuna variazione a IndexedDB, backup o logica delle scadenze.
+
 ## v0.4.0 — Scadenze intelligenti — 26 ottobre 2026
 
 - Riepilogo dei pagamenti previsti a 7 e 30 giorni e di quelli già scaduti.
