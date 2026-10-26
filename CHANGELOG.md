@@ -1,3 +1,9 @@
+## v0.3.1 — Rafforzamento cromatico — 26 ottobre 2026
+
+- «Meno pensieri» in arancione brillante ad alto contrasto sul verde bosco.
+- Schede delle spese e delle scadenze più definite su desktop e mobile; icone e testi più leggibili.
+- Nessuna modifica a IndexedDB, backup o funzioni finanziarie.
+
 # Changelog
 
 ## 0.3.0 — 26 ottobre 2026
