@@ -1,4 +1,4 @@
-# Oiko · v0.3.0 (GitHub Pages)
+# Oiko · v0.4.0 (GitHub Pages)
 
 **La tua casa è OK**
 
@@ -87,3 +87,10 @@ Le prossime iterazioni sono **dello stesso progetto Oiko**: verifica Safari iOS,
 ## Licenza
 
 Nessuna licenza pubblica è stata assegnata. Prima di rendere il codice riutilizzabile da terzi, scegliere esplicitamente una licenza.
+
+
+## Scadenze intelligenti — v0.4
+
+La sezione **Scadenze** mostra importi previsti nei prossimi 7 e 30 giorni (giorno corrente incluso), quelli già scaduti e lo storico dei pagamenti registrati. Le finestre sono cumulative: i 30 giorni comprendono i primi 7. I pagamenti nello storico provengono da spese associate a una scadenza (`billId`, `dueDate`); non sono creati automaticamente. Se una occorrenza è già stata registrata come pagata, Oiko non la considera di nuovo «da pagare», anche se la data del promemoria è rimasta invariata. Non sono previste notifiche automatiche.
+
+Nelle previsioni è conteggiata **la prossima occorrenza** per ogni promemoria attivo; non vengono generate in anticipo tutte le ricorrenze future senza conferma del pagamento precedente.

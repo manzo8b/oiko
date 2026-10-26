@@ -32,3 +32,31 @@ export function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'
 export function safeExternalUrl(s){if(!s)return '';try{const url=new URL(s);return url.protocol==='https:' && url.hostname && !url.username && !url.password ? url.href : '';}catch{return '';}}
 
 export function budgetUsage(spentCents,budgetCents){if(!Number.isSafeInteger(spentCents)||spentCents<0||!Number.isSafeInteger(budgetCents)||budgetCents<=0)throw new Error('Importi del budget non validi');const remainingCents=budgetCents-spentCents;return {spentCents,budgetCents,remainingCents,percent:Math.round(spentCents*100/budgetCents),exceeded:remainingCents<0};}
+
+
+/** Days between calendar dates, independent of daylight-saving transitions. */
+export function daysUntilDue(due,today=isoToday()){
+ if(!isIsoDate(due)||!isIsoDate(today))throw new Error('Data ISO non valida');
+ const dateToUtc=s=>{const [y,m,d]=s.split('-').map(Number);return Date.UTC(y,m-1,d);};
+ return Math.round((dateToUtc(due)-dateToUtc(today))/86400000);
+}
+/** Only one open occurrence per active bill; registered payments are excluded. */
+export function openBillOccurrences(bills,expenses=[]){
+ const paid=new Set(expenses.filter(e=>e.billId&&e.dueDate).map(e=>`${e.billId}|${e.dueDate}`));
+ return bills.filter(b=>b.active&&isIsoDate(b.nextDue)&&!paid.has(`${b.id}|${b.nextDue}`));
+}
+/** 7/30 day totals include today, but exclude overdue amounts; 30 includes 7. */
+export function deadlineOverview(bills,today=isoToday()){
+ const groups={overdue:{count:0,cents:0},next7:{count:0,cents:0},next30:{count:0,cents:0},later:{count:0,cents:0}};
+ for(const b of bills){if(!b.active||!isIsoDate(b.nextDue)||!Number.isSafeInteger(b.amountCents)||b.amountCents<0)continue;
+  const days=daysUntilDue(b.nextDue,today);
+  const add=group=>{groups[group].count++;groups[group].cents+=b.amountCents;};
+  if(days<0)add('overdue');else if(days<=30){add('next30');if(days<=7)add('next7');}else add('later');
+ }
+ return groups;
+}
+/** Payment history is derived from settled expenses, not merely from scheduled bills. */
+export function paidBillExpenses(expenses){
+ return expenses.filter(e=>e.billId&&isIsoDate(e.dueDate)&&isIsoDate(e.date))
+  .sort((a,b)=>b.date.localeCompare(a.date)||String(b.createdAt||'').localeCompare(String(a.createdAt||'')));
+}

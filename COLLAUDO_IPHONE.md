@@ -1,11 +1,12 @@
-# Oiko v0.3 · Test Safari iPhone
+# Oiko v0.4 · Test rapido Safari iPhone
 
-1. **Non reinstallare Oiko né cancellare i dati locali.** Apri Oiko dall'icona della schermata Home; verifica che le spese precedenti siano ancora presenti.
-2. Controlla che i titoli siano senza punto finale: «La tua casa è OK», «Più controllo», «Meno pensieri», Oiko senza punto.
-3. **Impostazioni → Budget per categoria**: scegli Supermercato, inserisci un limite di prova (ad es. 50 €) e salva. Verifica che la categoria rimanga selezionata.
-4. **Oggi → Budget per categoria**: confronta quanto speso nel mese con il limite impostato, anche in caso di superamento. **Report → Limiti per categoria**: verifica lo stesso importo.
-5. Chiudi completamente e riapri Oiko dalla stessa icona: verifica che il limite sia conservato insieme alle vecchie spese.
-6. **Impostazioni → Backup completo**: esporta il JSON, conserva il file in File sul dispositivo e verifica nella sezione `preferences[].data.categoryBudgetsCents` la presenza del valore (in centesimi).
-7. Rimuovi il limite con **Rimuovi limite** e verifica che scompaia dalla dashboard. Nessuna spesa deve essere cancellata.
+1. Apri Oiko dalla **stessa icona Home**, senza reinstallarla, e controlla che le spese e i budget precedenti ci siano ancora.
+2. Verifica il nuovo arancione di «Meno pensieri» e il contrasto delle righe negli elenchi.
+3. Apri **Scadenze**: verifica le tre card (7 giorni, 30 giorni, già scadute).
+4. Premi **7 giorni**, poi **30 giorni**: i 30 giorni includono i primi 7; i già scaduti non devono comparire in queste due viste.
+5. Premi **Scadute**: vengono mostrate solo le scadenze precedenti a oggi.
+6. Premi **Pagate**: sono visibili solo i pagamenti già confermati da una scadenza, non le bollette non pagate.
+7. Usa una scadenza **di prova** e registra manualmente il pagamento: appare nel registro Spese e in Pagate, mentre la scadenza avanza secondo la sua periodicità.
+8. Chiudi e riapri l'app: le spese devono essere conservate. Esporta un backup senza sostituire i dati.
 
-**Privacy:** usa soltanto valori di prova per nuove registrazioni. Il ripristino del backup è distruttivo per l'archivio corrente e va eseguito solo in un ambiente di prova separato.
+**Importante:** non disinstallare l'app e non premere ripristino/svuotamento se contiene spese reali. Il backup completo può contenere dati privati. Le scadenze sono promemoria manuali, non addebiti automatici; non sono previste notifiche push.

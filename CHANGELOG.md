@@ -1,8 +1,16 @@
-## v0.3.1 — Rafforzamento cromatico — 26 ottobre 2026
+## v0.4.0 — Scadenze intelligenti — 26 ottobre 2026
 
-- «Meno pensieri» in arancione brillante ad alto contrasto sul verde bosco.
-- Schede delle spese e delle scadenze più definite su desktop e mobile; icone e testi più leggibili.
-- Nessuna modifica a IndexedDB, backup o funzioni finanziarie.
+- Riepilogo dei pagamenti previsti a 7 e 30 giorni e di quelli già scaduti.
+- Filtri Da pagare, 7 giorni, 30 giorni, Scadute e Pagate con storico confermato.
+- Accesso rapido alla vista scadenze dalla dashboard.
+- Date calcolate per calendario, senza errori nei cambi di ora; nessun doppio conteggio di un'occorrenza già pagata.
+- Nessuna migrazione IndexedDB e nessuna modifica al backup JSON v1.
+
+## v0.3.1 — Contrasto e leggibilità — 26 ottobre 2026
+
+- Evidenziato «Meno pensieri» in arancione caldo ad alto contrasto, mantenendo verde bosco e salvia.
+- Elenchi spese e scadenze più leggibili: card separate, icone più vive, gerarchie cromatiche rafforzate.
+- Nessun cambiamento a database locale, backup, calcoli o pagamenti.
 
 # Changelog
 

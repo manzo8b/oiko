@@ -13,3 +13,11 @@
 11. Su Safari iPhone: ricarica la pagina e verifica persistenza dei dati (salvo navigazione privata/limitazioni del browser).
 12. Verifica che un contenuto testuale come `<script>alert(1)</script>` compaia soltanto come testo, senza essere eseguito.
 13. Verifica che importazioni malformate o con URL non HTTPS siano rifiutate prima della sostituzione dei dati.
+
+## V0.4 — Scadenze intelligenti
+
+- [x] Confini 0, 7, 8, 30, 31 giorni e scaduto (test automatici)
+- [x] Il pagamento di una occorrenza non è conteggiato nelle previsioni (test)
+- [x] Storico pagato derivato da `expenses[].billId` e `dueDate` (test)
+- [x] Filtri desktop/mobile tramite browser simulato (350/390/1365px)
+- [ ] Safari iPhone reale e backup dopo la pubblicazione
