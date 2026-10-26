@@ -31,3 +31,12 @@
 - Anello e andamento gestiscono mesi vuoti senza dati inventati
 - Il tasto rapido non copre la dashboard
 - Le voci e gli importi rimangono in IndexedDB, non sono eliminati dal redesign
+
+## Oiko v0.6 — previsione delle uscite
+
+- In Report verificare le sei colonne a partire dal mese corrente e il dettaglio selezionabile.
+- Una bolletta mensile di 31 gennaio si proietta al 28/29 febbraio e torna al 31 marzo.
+- Scadenza aperta scaduta: visibile separatamente, assente dalla proiezione dei mesi futuri.
+- Pagamento già registrato: occorrenza assente dalla previsione, la successiva resta prevista.
+- Importi dei report consuntivi invariati; nessun doppio conteggio con il futuro.
+- Controllare su Safari iOS e su desktop; verificare persistenza dei dati preesistenti dopo aggiornamento.

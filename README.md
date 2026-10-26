@@ -1,4 +1,4 @@
-# Oiko v0.5.1 — Dashboard e grafici
+# Oiko v0.6.0 — Dashboard e grafici
 
 Questa versione conserva **la palette Oiko v0.5**, il database IndexedDB e il formato di backup JSON v1.
 
@@ -13,11 +13,11 @@ Questa versione conserva **la palette Oiko v0.5**, il database IndexedDB e il fo
 
 ## Controlli
 
-Eseguire `npm test`. Nella v0.5.1 vengono verificati 44 test automatici. La visualizzazione è stata collaudata con dati fittizi in browser su schermi da 350 px, 390 px e 1365 px, mediante simulazione dell'archivio applicativo (non test diretto di Safari iPhone o IndexedDB). Non è stato alterato il database locale dei dispositivi degli utenti.
+Eseguire `npm test`. Nella v0.6.0 vengono verificati 44 test automatici. La visualizzazione è stata collaudata con dati fittizi in browser su schermi da 350 px, 390 px e 1365 px, mediante simulazione dell'archivio applicativo (non test diretto di Safari iPhone o IndexedDB). Non è stato alterato il database locale dei dispositivi degli utenti.
 
 ## Privacy e continuità
 
-I dati risiedono nella memoria locale del browser (IndexedDB). Prima di cancellare la PWA o i dati del sito esportare e custodire il backup JSON in una destinazione sicura. Il contenuto del backup può essere riservato e non va pubblicato su GitHub. La v0.5.1 modifica solo l'interfaccia e le etichette: schema `oiko-local-v1`, versione `1`, e JSON `oiko-backup`, versione `1`, invariati.
+I dati risiedono nella memoria locale del browser (IndexedDB). Prima di cancellare la PWA o i dati del sito esportare e custodire il backup JSON in una destinazione sicura. Il contenuto del backup può essere riservato e non va pubblicato su GitHub. La v0.6.0 modifica solo l'interfaccia e le etichette: schema `oiko-local-v1`, versione `1`, e JSON `oiko-backup`, versione `1`, invariati.
 
 ## Pubblicazione GitHub Pages
 

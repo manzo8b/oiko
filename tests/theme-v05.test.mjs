@@ -14,7 +14,7 @@ test('new style keeps paid/overdue states distinct',()=>{
 test('home install icon and browser theme reflect purple brand',()=>{
  const index=read('index.html'),manifest=JSON.parse(read('manifest.webmanifest')),logo=read('assets/logo.svg');
  assert.equal(manifest.theme_color,'#241956');
- assert.match(index,/styles\.css\?v=0\.5\.[01]/);
+ assert.match(index,/styles\.css\?v=0\.(?:5\.[01]|6\.0)/);
  assert.match(index,/apple-touch-icon/);
  assert.match(logo,/#33206F/);
 });

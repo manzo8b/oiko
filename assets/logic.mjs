@@ -60,3 +60,38 @@ export function paidBillExpenses(expenses){
  return expenses.filter(e=>e.billId&&isIsoDate(e.dueDate)&&isIsoDate(e.date))
   .sort((a,b)=>b.date.localeCompare(a.date)||String(b.createdAt||'').localeCompare(String(a.createdAt||'')));
 }
+
+/** Projection of registered open bill occurrences across calendar months.
+ * Overdue amounts remain a separate backlog; they are never silently moved
+ * into future months. One-off bills occur once. Paid occurrences are excluded.
+ * Recurring values are today's estimates, not bank-confirmed charges.
+ */
+export function forecastBills(bills,expenses=[],today=isoToday(),months=6){
+ if(!isIsoDate(today)||!Number.isInteger(months)||months<1||months>12)throw new Error('Intervallo previsione non valido');
+ const startMonth=today.slice(0,7);
+ const buckets=Array.from({length:months},(_,i)=>({month:monthShift(startMonth,i),cents:0,count:0,items:[]}));
+ const endExclusive=monthShift(startMonth,months)+'-01';
+ const paid=new Set(expenses.filter(e=>e.billId&&isIsoDate(e.dueDate)).map(e=>`${e.billId}|${e.dueDate}`));
+ const overdue=[];
+ for(const bill of bills){
+  if(!bill||!bill.active||!isIsoDate(bill.nextDue)||!Number.isSafeInteger(bill.amountCents)||bill.amountCents<=0||!Object.hasOwn(FREQUENCIES,bill.frequency))continue;
+  if(bill.nextDue<today){
+   if(!paid.has(`${bill.id}|${bill.nextDue}`))overdue.push({billId:bill.id,name:bill.name||'Scadenza',date:bill.nextDue,cents:bill.amountCents,categoryId:bill.categoryId});
+   continue;
+  }
+  const step=FREQUENCIES[bill.frequency];
+  const anchor=Number.isInteger(bill.anchorDay)&&bill.anchorDay>=1&&bill.anchorDay<=31?bill.anchorDay:Number(bill.nextDue.slice(8));
+  let date=bill.nextDue;
+  for(let i=0;i<=12&&date<endExclusive;i++){
+   if(date>=today&&!paid.has(`${bill.id}|${date}`)){
+    const bucket=buckets.find(x=>x.month===date.slice(0,7));
+    if(bucket){const item={billId:bill.id,name:bill.name||'Scadenza',date,cents:bill.amountCents,categoryId:bill.categoryId};bucket.items.push(item);bucket.count++;bucket.cents+=bill.amountCents;}
+   }
+   if(!step)break;
+   date=addMonthsClamped(date,step,anchor);
+  }
+ }
+ for(const b of buckets)b.items.sort((a,b)=>a.date.localeCompare(b.date)||String(a.name).localeCompare(String(b.name),'it'));
+ overdue.sort((a,b)=>a.date.localeCompare(b.date));
+ return {months:buckets,totalCents:buckets.reduce((s,b)=>s+b.cents,0),overdueCents:overdue.reduce((s,b)=>s+b.cents,0),overdue};
+}

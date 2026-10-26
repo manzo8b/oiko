@@ -1,3 +1,12 @@
+## v0.6.0 — Previsione uscite 6 mesi — 26 ottobre 2026
+
+- In Report, previsione mensile delle scadenze aperte per sei mesi da oggi, con selezione del mese e dettaglio dei pagamenti.
+- Ricorrenze mensili/bimestrali/trimestrali/semestrali/annuali e una tantum, con preservazione del giorno e gestione dei mesi corti.
+- Separazione rigorosa tra previsioni, movimenti già pagati e arretrati non saldati; nessun doppio conteggio.
+- Accesso alla previsione dalla dashboard Oggi.
+- Palette e asset visivi v0.5.1 invariati; IndexedDB v1 e backup JSON v1 invariati.
+- Nessun calendario remoto, nessun addebito bancario, nessuna notifica push.
+
 ## v0.5.1 — Dashboard e grafici più leggibili — 26 ottobre 2026
 
 - Dashboard mobile più compatta: dati principali visibili prima, senza sacrificare la palette v0.5.

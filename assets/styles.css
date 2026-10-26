@@ -432,3 +432,32 @@ input,select,textarea{accent-color:#6945EE}
   .bar-share{font-size:10px}
 }
 @media(max-width:380px){.donut-legend-item{font-size:11px}.donut-legend-item strong{font-size:11px}.trend-amount{font-size:8px}}
+
+
+/* Oiko v0.6 — previsioni, stessi colori della v0.5.1 */
+.deadline-dashboard-actions{display:flex;align-items:center;justify-content:flex-end;gap:12px;flex-wrap:wrap}
+.forecast-panel{margin-top:20px;scroll-margin-top:22px}
+.forecast-intro{margin:0 0 15px;font-size:13px;color:var(--muted);line-height:1.5}
+.forecast-chart{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:18px 0 20px;padding:16px 15px 12px;border:1px solid var(--border);border-radius:18px;background:var(--bg)}
+.forecast-month{display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid transparent;border-radius:14px;background:transparent;padding:8px 4px 10px;color:var(--ink);min-width:0;min-height:178px}
+.forecast-month:hover{background:var(--mint)}
+.forecast-month.active{border-color:var(--accent);background:var(--mint)}
+.forecast-month-value{font-size:12px;white-space:nowrap;letter-spacing:-.3px;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.forecast-track{height:100px;width:32px;max-width:85%;background:var(--border);border-radius:9px;overflow:hidden;display:flex;align-items:flex-end}
+.forecast-fill{width:100%;background:var(--accent);border-radius:8px 8px 0 0;transition:height .2s}
+.forecast-month.active .forecast-fill{background:var(--accent-warm)}
+.forecast-month-label{font-size:12px;font-weight:700;text-transform:capitalize}
+.forecast-list-title{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;padding:12px 0;border-bottom:1px solid var(--border)}
+.forecast-list-title strong{text-transform:capitalize}
+.forecast-list-title span{font-size:12px;color:var(--muted)}
+.forecast-details{list-style:none;padding:0;margin:0}
+.forecast-detail{display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 5px;border-bottom:1px solid var(--border);font-size:13px}
+.forecast-detail-date{font-size:12px;color:var(--muted)}
+.forecast-detail-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.forecast-detail strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.forecast-detail-empty{padding:22px 5px;color:var(--muted);font-size:13px}
+.forecast-overdue{display:flex;flex-wrap:wrap;align-items:center;gap:7px 13px;border:1px solid #F0D4C8;border-radius:13px;padding:13px;margin-top:15px;background:#FFF3ED;color:#9D4730;font-size:12px}
+.forecast-overdue span{flex:1;min-width:130px}.forecast-overdue .link-button{color:#9D4730}
+@media(max-width:760px){.forecast-panel{margin-top:14px}.forecast-chart{gap:3px;padding:10px 5px}.forecast-month{padding:8px 1px;min-height:153px;gap:6px}.forecast-month-value{font-size:9px;letter-spacing:-.4px}.forecast-track{height:83px;width:24px}.forecast-month-label{font-size:10px}.forecast-detail{grid-template-columns:73px minmax(0,1fr) auto;gap:7px;font-size:12px}.forecast-detail-date{font-size:11px}.deadline-dashboard-actions{gap:3px 9px}}
+@media(max-width:355px){.forecast-month-value{font-size:8px}.forecast-track{width:20px}.forecast-list-title{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.forecast-fill{transition:none}}
