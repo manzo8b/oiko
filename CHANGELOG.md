@@ -1,3 +1,10 @@
+## v0.6.3 — Oiko spiegata in un attimo — 27 ottobre 2026
+
+- Nuova narrazione nella dashboard: spese di casa chiare, praticità immediata, nessun account per Oiko locale.
+- Due messaggi di fiducia sotto il titolo, in formato compatto, senza ostacolare le metriche.
+- Oiko Family presentata come modalità condivisa per due adulti e beta privata, senza promettere pagamenti attivi.
+- SEO descrittiva e aggiornamento versioni CSS/JS; nessun cambio IndexedDB o Supabase.
+
 ## v0.6.2 — Fiducia e privacy a colpo d’occhio — 27 ottobre 2026
 
 - Trasformato il testo tecnico in fondo alla sidebar in una card rassicurante Oiko, con logo e sorriso giallo.
