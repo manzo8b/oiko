@@ -13,7 +13,7 @@
 | Payments | Record paid expenses; no financial transactions | Shared recording of payments; no financial transactions |
 | Current state | Usable | Private beta |
 
-Oiko's primary entry is **https://manzo8b.github.io/oiko/**.
+Oiko's public prototype entry is **https://manzo8b.github.io/oiko/**. **GitHub Pages must not become the commercial SaaS hosting platform**; see [Commercial ownership and transfer](COMMERCIAL_OWNERSHIP_AND_TRANSFER.md) for restrictions and the proposed production architecture.
 Private Family staging currently operates at **https://oiko-family-staging-wanqjz.v2.appdeploy.ai/**. The staging URL is internet-accessible, but account registration is disabled and access is restricted to approved testers. This URL is not yet the public sales destination.
 
 **Do not imply** that opening Oiko Family automatically migrates IndexedDB data, synchronizes Oiko Solo, or upgrades an existing local archive. There is no automatic migration, cloud backup of local data, billing system, or commercial subscription in this release.
@@ -35,7 +35,7 @@ Private Family staging currently operates at **https://oiko-family-staging-wanqj
 - Family tables must use tenant-scoped RLS, backed by verified session identity.
 - Invites are one-time, email-bound and expire; perform independent cross-household access tests.
 - Confirming bills must remain atomic and idempotent for the same occurrence.
-- Family reporting currently reads the most recent 100 expenses and 100 bills; complete historical reporting/pagination is **required before release**.
+- Family reporting now uses paginated reads up to 20,000 records per collection; validate complete historical accounting with thousands of test records, permission changes during reads, and behavior at the explicit cap before release.
 - Revocation and recovery procedures must be tested on real devices.
 - No external payment processor, login, or storage permission is needed for Oiko's local mode.
 
@@ -51,11 +51,11 @@ Private Family staging currently operates at **https://oiko-family-staging-wanqj
 | Reporting integrity | Correct totals with thousands of records and pagination | Paginazione implementata (limite esplicito 20.000/sezione); carico reale da provare |
 | Data lifecycle | Export, migration local→Family, deletes, backup restoration | Esportazione JSON solo lettura pubblicata, non ancora collaudata; import e ripristino non presenti |
 | Authentication hardening | Leaked-password checks, MFA/passkey plan, rate limits | Not complete |
-| Privacy/compliance | Controller identification, GDPR assessment, notice, retention, DPA review | Not complete |
+| Privacy/compliance | Controller identification, GDPR assessment, notice, retention, DPA review | Preliminary technical governance documented; legal operator and counsel review pending |
 | Consumer sales | Price/renewal/recesso terms, Italian/EU VAT and OSS if applicable | Not complete |
 | Payments and entitlement | Test checkout, webhooks, access after expired/cancelled plan | Not complete |
 | Support and incident readiness | Contact, error monitoring, incident response, recovery procedure | Not complete |
-| Branding/IP | Verify Oiko naming, domain and mark availability | Not complete |
+| Branding/IP | Verify Oiko naming, domain and mark availability | Public repository has no verified LICENSE; provenance, mark and rights audit pending |
 
 **Rule: Do not enable paid subscriptions or advertise Family as fully available until every critical gate is accepted.** Commercial legal review should be performed by qualified counsel, and tax structure with a commercialista.
 
@@ -67,6 +67,14 @@ Private Family staging currently operates at **https://oiko-family-staging-wanqj
 - Backup server gestiti da Supabase e prova di restore richiesti prima della vendita: i piani Pro/Team/Enterprise prevedono backup giornalieri; per piani gratuiti serve una soluzione off-site verificata. Non confondere export utente con backup del database.
 - Supabase Security Advisor segnala ancora 'auth_leaked_password_protection' disabilitato: da risolvere prima del rilascio commerciale.
 - Copie di test Family non vanno mai pubblicate nel repository GitHub pubblico.
+
+## Commercial publishing decision — 27 October 2026
+
+- GitHub Pages is retained for the local beta/demo, not intended to operate a commercial Oiko Family SaaS. GitHub's Pages terms restrict free commercial hosting of online business and SaaS.
+- Oiko Family production must run on an eligible commercial host under a controlled domain, with production Supabase separated from staging.
+- Verified: the Oiko repository is public and has no recognized software license; do not choose a license or make visibility changes until the IP strategy is agreed.
+- The legal identity of the seller/controller has not been established. Do not publish a finalized privacy notice containing assumed names or contacts.
+- Source of truth: [Commercial ownership and transfer](COMMERCIAL_OWNERSHIP_AND_TRANSFER.md).
 
 ## Next sprint (recommended)
 
