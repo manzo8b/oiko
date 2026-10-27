@@ -461,3 +461,42 @@ input,select,textarea{accent-color:#6945EE}
 @media(max-width:760px){.forecast-panel{margin-top:14px}.forecast-chart{gap:3px;padding:10px 5px}.forecast-month{padding:8px 1px;min-height:153px;gap:6px}.forecast-month-value{font-size:9px;letter-spacing:-.4px}.forecast-track{height:83px;width:24px}.forecast-month-label{font-size:10px}.forecast-detail{grid-template-columns:73px minmax(0,1fr) auto;gap:7px;font-size:12px}.forecast-detail-date{font-size:11px}.deadline-dashboard-actions{gap:3px 9px}}
 @media(max-width:355px){.forecast-month-value{font-size:8px}.forecast-track{width:20px}.forecast-list-title{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.forecast-fill{transition:none}}
+
+
+/* Oiko v0.6.1 — struttura prodotto: Oiko locale + area Family */
+.sidebar-family-link{display:flex;gap:11px;align-items:center;text-decoration:none;border:1px solid #51409E;border-radius:14px;padding:14px 12px;color:#fff;background:linear-gradient(110deg,#463080,#6945EE);font-size:13px;font-weight:850;margin:14px 7px 0;box-shadow:0 10px 23px rgba(59,37,129,.15)}
+.sidebar-family-link>span:first-child{display:grid;place-items:center;width:26px;height:26px;flex:none;border-radius:8px;background:rgba(255,255,255,.15)}
+.sidebar-family-link small{font-weight:550;color:#E2D9FF;display:block;font-size:10px;margin-top:2px}
+.sidebar-family-link:hover{background:linear-gradient(110deg,#32206F,#5C38E5)}
+.topbar-family-link{color:#6039D7;background:#F1ECFF;border:1px solid #E1D8FC;text-decoration:none;font-weight:800;font-size:12px;padding:10px 12px;border-radius:11px;white-space:nowrap}
+.topbar-family-link:hover{background:#E7DCFF}
+.oiko-family-invite{display:flex;align-items:center;justify-content:space-between;gap:22px;background:#FFF;border:1px solid #DCD7F0;border-radius:19px;padding:19px 21px;margin-top:24px;box-shadow:0 7px 22px rgba(58,44,105,.04)}
+.oiko-family-invite-copy{display:grid;gap:4px}
+.oiko-family-kicker,.family-product-eyebrow{color:#7455E4;letter-spacing:1.3px;font-size:10px;font-weight:850}
+.oiko-family-invite-copy strong{font-size:18px;color:#211B46;letter-spacing:-.3px}
+.oiko-family-invite-copy p{font-size:12px;color:#716A88;margin:0;max-width:610px}
+.oiko-family-invite-link{display:inline-flex;align-items:center;gap:6px;padding:11px 14px;background:#6945EE;color:#FFF;border-radius:10px;text-decoration:none;font-weight:800;font-size:12px;white-space:nowrap}
+.oiko-family-invite-link:hover{background:#5535CF}
+.family-product-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(225px,.7fr);gap:25px;background:linear-gradient(125deg,#251A55,#5437C7 70%,#6945EE);color:#fff;border-radius:24px;padding:36px 39px;box-shadow:0 20px 38px rgba(38,27,82,.13)}
+.family-product-hero h2{font-size:clamp(31px,4vw,50px);line-height:1.07;letter-spacing:-1.5px;margin:12px 0}
+.family-product-hero h2 em{font-style:normal;color:#FFD04A}
+.family-product-hero p{max-width:530px;color:#EAE5FF;font-size:14px;line-height:1.65;margin:0}
+.family-product-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}
+.family-product-primary{background:#FFD04A!important;border-color:#FFD04A!important;color:#211745!important}
+.family-product-secondary{background:transparent!important;color:#fff!important;border-color:#A391E9!important}
+.family-product-visual{align-self:center;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.23);padding:26px;border-radius:20px;display:grid;gap:10px;font-weight:750;text-align:center}
+.family-product-number{font-size:clamp(57px,8vw,90px);font-weight:850;color:#FFD04A;line-height:1}
+.family-product-mini{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.family-product-mini span{padding:5px 8px;border-radius:99px;background:rgba(255,255,255,.13);font-size:10px;color:#EEE9FF}
+.family-product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:19px 0}
+.family-benefit{min-width:0}
+.family-benefit h3{color:#241B50;margin:10px 0 6px}
+.family-benefit p{font-size:12px;color:#706B84;margin:0}
+.family-benefit-icon{display:grid;place-items:center;background:#EDE7FE;color:#6945EE;border-radius:12px;width:37px;height:37px;font-size:22px;font-weight:800}
+.family-separation{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.family-separation h3{color:#211B46;margin:7px 0 5px}
+.family-separation p{font-size:12px;color:#6D6781;max-width:780px}
+.family-separation>a{flex:none}
+@media(max-width:920px){.family-product-hero{grid-template-columns:1fr}.family-product-visual{display:none}.family-product-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.topbar-family-link{font-size:10px;padding:8px}.privacy-pill{display:none}.topbar-actions{gap:8px}.oiko-family-invite{padding:16px;flex-wrap:wrap}.oiko-family-invite-copy strong{font-size:16px}.oiko-family-invite-link{width:100%;justify-content:center}.family-product-hero{padding:22px 19px;border-radius:20px}.family-product-hero h2{font-size:32px}.family-product-actions a{flex:1;text-align:center}.family-separation{display:grid}.family-separation>a{justify-self:start}}
+@media(max-width:390px){.topbar-family-link{max-width:100px;white-space:normal;text-align:center}.family-product-actions{display:grid}}
