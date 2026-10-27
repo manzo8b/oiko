@@ -49,3 +49,8 @@ Oiko deve poter essere offerto come **servizio Family ad abbonamento** e, in alt
 - [Registro verificabile dei gate](config/release-gates.json)
 
 Comando informativo: `npm run release:check`. Comando di verifica bloccante, volutamente non ancora verde: `npm run release:check:strict`.
+
+## Racconto del prodotto e custodia del backend
+
+- [Narrazione commerciale e testi della dashboard v0.6.3](docs/MARKETING_PRODUCT_NARRATIVE.md)
+- [Inventario tecnico delle migrazioni Supabase e procedura di custodia privata](docs/FAMILY_MIGRATIONS_INVENTORY.md)
