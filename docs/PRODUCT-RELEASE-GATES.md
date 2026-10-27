@@ -44,12 +44,12 @@ Private Family staging currently operates at **https://oiko-family-staging-wanqj
 | Gate | Acceptance evidence | Current |
 | --- | --- | --- |
 | UX consistency | Mobile + desktop guided tests; accessibility and VoiceOver | In progress |
-| Family workflows | 2 distinct accounts; shared expenses; single paid occurrence | Initial hands-on test passed |
-| Tenant isolation | Authenticated attacker with separate household denied | Not complete |
-| Concurrent payments | Two devices tap at the same time; one expense only | Not complete |
-| Account lifecycle | Invite, revoke, rejoin, recovery, session revocation | Not complete |
-| Reporting integrity | Correct totals with thousands of records and pagination | Not complete |
-| Data lifecycle | Export, migration local→Family, deletes, backup restoration | Not complete |
+| Family workflows | 2 distinct accounts; shared expenses; single paid occurrence | Superati su due dispositivi |
+| Tenant isolation | Authenticated attacker with separate household denied | Simulazione SQL con nucleo separato e RLS superata; E2E con terzo account ancora da effettuare |
+| Concurrent payments | Two devices tap at the same time; one expense only | Test manuale su due dispositivi superato; stress test automatico ancora da effettuare |
+| Account lifecycle | Invite, revoke, rejoin, recovery, session revocation | Invito→revoca→reinvito superato; cambio password e gestione sessioni pubblicati ma non testati; email recovery in attesa verifica SMTP |
+| Reporting integrity | Correct totals with thousands of records and pagination | Paginazione implementata (limite esplicito 20.000/sezione); carico reale da provare |
+| Data lifecycle | Export, migration local→Family, deletes, backup restoration | Esportazione JSON solo lettura pubblicata, non ancora collaudata; import e ripristino non presenti |
 | Authentication hardening | Leaked-password checks, MFA/passkey plan, rate limits | Not complete |
 | Privacy/compliance | Controller identification, GDPR assessment, notice, retention, DPA review | Not complete |
 | Consumer sales | Price/renewal/recesso terms, Italian/EU VAT and OSS if applicable | Not complete |
@@ -58,6 +58,15 @@ Private Family staging currently operates at **https://oiko-family-staging-wanqj
 | Branding/IP | Verify Oiko naming, domain and mark availability | Not complete |
 
 **Rule: Do not enable paid subscriptions or advertise Family as fully available until every critical gate is accepted.** Commercial legal review should be performed by qualified counsel, and tax structure with a commercialista.
+
+## Phase update — 27 October 2026
+
+- Oiko Family staging aggiunge cambio password da sessione autenticata, logout locale/globale e chiusura delle altre sessioni dell'account. **Non ancora collaudati** su account tester.
+- Richiesta recupero password via email predisposta: non dichiarare affidabile senza SMTP configurato, test di consegna email e verifica end-to-end link PKCE.
+- Export manuale JSON dei dati del nucleo (spese, bollette, membri e audit) protetto da RLS e richiesta di appartenenza attiva. File non cifrato e da proteggere; funzione di import/ripristino non prevista in questa versione.
+- Backup server gestiti da Supabase e prova di restore richiesti prima della vendita: i piani Pro/Team/Enterprise prevedono backup giornalieri; per piani gratuiti serve una soluzione off-site verificata. Non confondere export utente con backup del database.
+- Supabase Security Advisor segnala ancora 'auth_leaked_password_protection' disabilitato: da risolvere prima del rilascio commerciale.
+- Copie di test Family non vanno mai pubblicate nel repository GitHub pubblico.
 
 ## Next sprint (recommended)
 
