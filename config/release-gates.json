@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-27",
+  "product": "Oiko",
+  "market_release_allowed": false,
+  "business_handover_ready": false,
+  "statuses_allowed": [
+    "not_started",
+    "in_progress",
+    "verified"
+  ],
+  "rule": "Verified requires externally checkable evidence and responsible approval; no automatic trust in status text",
+  "gates": [
+    {
+      "id": "OPERATOR",
+      "label": "Titolare dell'impresa e responsabile del servizio designati",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Identità e dati legali da documentare senza pubblicare dati riservati",
+      "evidence": []
+    },
+    {
+      "id": "IP",
+      "label": "Catena di titolarità codice, logo, licenze e dipendenze verificata",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Revisione proprietà intellettuale e distribuzione sorgenti",
+      "evidence": []
+    },
+    {
+      "id": "SOURCE",
+      "label": "Sorgenti Family esportati in repository privato e build riproducibile",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Build da clone pulito, dipendenze bloccate e test",
+      "evidence": []
+    },
+    {
+      "id": "LEGAL",
+      "label": "Contratti consumer, informativa e DPA revisionati",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Verifica legale esterna, assistenza, cancellazione e termini",
+      "evidence": []
+    },
+    {
+      "id": "PROD_HOST",
+      "label": "Dominio controllato e hosting commerciale autorizzato",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Dominio, contratto hosting e HTTPS, GitHub Pages escluso dal SaaS",
+      "evidence": []
+    },
+    {
+      "id": "PROD_DB",
+      "label": "Supabase produzione isolato e schema riprodotto dalle migrazioni",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "RLS/RPC/isolamento multitenant testati su progetto vuoto",
+      "evidence": []
+    },
+    {
+      "id": "SECURITY",
+      "label": "SMTP verificato, password compromesse e recovery/exit testati",
+      "critical": true,
+      "status": "in_progress",
+      "next_evidence": "Leaked-password warning attuale; Pro o superiore richiesto per la protezione Supabase",
+      "evidence": []
+    },
+    {
+      "id": "BACKUP",
+      "label": "Backup del server e restore isolato documentati",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Misure RPO/RTO e verbale di ripristino, non basta export JSON",
+      "evidence": []
+    },
+    {
+      "id": "ERASURE",
+      "label": "Chiusura nucleo, cancellazione account e retention verificata",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Test autorizzazioni, log e diritti degli interessati",
+      "evidence": []
+    },
+    {
+      "id": "ISOLATION",
+      "label": "Test E2E di due famiglie separate e carico",
+      "critical": true,
+      "status": "in_progress",
+      "next_evidence": "SQL isolato e test manuali positivi; mancano utente terzo e stress test",
+      "evidence": []
+    },
+    {
+      "id": "BILLING",
+      "label": "Prezzi approvati, fiscalità e checkout con webhooks idempotenti",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Nessuna vendita finché il pagamento non è verificato",
+      "evidence": []
+    },
+    {
+      "id": "ENTITLEMENTS",
+      "label": "Diritti premium server-side separati dall'appartenenza familiare",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Sospensione/riattivazione senza esporre o eliminare i dati",
+      "evidence": []
+    },
+    {
+      "id": "UX",
+      "label": "Percorsi mobile, accessibilità e assistenza collaudati",
+      "critical": true,
+      "status": "in_progress",
+      "next_evidence": "Beta con due adulti; accessibilità, supporto e QA completa",
+      "evidence": []
+    },
+    {
+      "id": "TRANSFER",
+      "label": "Data room e procedura di trasferimento degli asset verificata",
+      "critical": true,
+      "status": "not_started",
+      "next_evidence": "Esercizio di handover senza dati personali a terzi",
+      "evidence": []
+    }
+  ]
+}

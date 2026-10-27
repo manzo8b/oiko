@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "product": "Oiko",
+  "positioning": "La tua casa è OK",
+  "commercial_policy": "dual_track_revenue_and_transfer",
+  "source_of_truth": "Repository public planning manifest; actual SaaS entitlements not yet implemented",
+  "modes": {
+    "oiko": {
+      "public_name": "Oiko",
+      "price_model": "free",
+      "account_required": false,
+      "data_location": "browser-indexeddb",
+      "family_sync": false,
+      "bank_connections": false,
+      "cloud_backup": false
+    },
+    "family": {
+      "public_name": "Oiko Family",
+      "commercial_status": "private_beta",
+      "price_model": "subscription_proposed_not_approved",
+      "account_required": true,
+      "max_active_adults": 2,
+      "data_location": "supabase-cloud",
+      "automatic_local_data_migration": false,
+      "checkout_enabled": false,
+      "entitlements_implemented": false
+    }
+  },
+  "business_tracks": {
+    "consumer_service": {
+      "goal": "Subscription Family hosted and supported by a legally identified operator",
+      "status": "design",
+      "price_confirmed": false
+    },
+    "licensing_or_asset_sale": {
+      "goal": "License or transfer documented code, IP rights and transferable infrastructure, with privacy law respected",
+      "status": "design",
+      "buyer_identified": false
+    }
+  },
+  "deployment": {
+    "local_demo_url": "https://manzo8b.github.io/oiko/",
+    "family_staging_url": "https://oiko-family-staging-wanqjz.v2.appdeploy.ai/",
+    "production_domain": "NOT_SELECTED",
+    "production_host": "NOT_SELECTED",
+    "production_supabase_project": "NOT_CREATED",
+    "consumer_checkout_enabled": false,
+    "private_family_source_archive": "NOT_VERSIONED_OUTSIDE_STAGING"
+  }
+}

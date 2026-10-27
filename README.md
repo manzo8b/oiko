@@ -34,3 +34,15 @@ I dati risiedono nella memoria locale del browser (IndexedDB). Prima di cancella
 ## Pubblicazione GitHub Pages
 
 Caricare i file nella radice del repository, branch `main`, con Pages su `main / (root)`. La versione pubblica è https://manzo8b.github.io/oiko/. Non occorre reinstallare l'icona Home e non bisogna cancellare la cache o i dati per aggiornare. Per verificare colori e grafici aprire Oiko dall'icona originale, mantenendo la stessa origine.
+
+## Due vie commerciali — direzione approvata
+
+Oiko deve poter essere offerto come **servizio Family ad abbonamento** e, in alternativa o in futuro, essere **concesso in licenza o ceduto come software**. La versione locale Oiko resta gratuita e indipendente. Nessuna vendita, checkout, migrazione dati o progetto Supabase produzione è stato attivato.
+
+- [Strategia commerciale a due percorsi](docs/DUAL_TRACK_STRATEGY.md)
+- [Architettura per produzione e cessione](docs/SAAS_PRODUCTION_ARCHITECTURE.md)
+- [Roadmap e prove di accettazione](docs/DUAL_TRACK_EXECUTION_ROADMAP.md)
+- [Catalogo modalità prodotto](config/product-catalog.json)
+- [Registro verificabile dei gate](config/release-gates.json)
+
+Comando informativo: `npm run release:check`. Comando di verifica bloccante, volutamente non ancora verde: `npm run release:check:strict`.
