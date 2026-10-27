@@ -40,6 +40,7 @@ Caricare i file nella radice del repository, branch `main`, con Pages su `main /
 Oiko deve poter essere offerto come **servizio Family ad abbonamento** e, in alternativa o in futuro, essere **concesso in licenza o ceduto come software**. La versione locale Oiko resta gratuita e indipendente. Nessuna vendita, checkout, migrazione dati o progetto Supabase produzione è stato attivato.
 
 - [Strategia commerciale a due percorsi](docs/DUAL_TRACK_STRATEGY.md)
+- [Hosting e prima analisi dei costi](docs/PROVIDER_AND_COST_SHORTLIST.md)
 - [Architettura per produzione e cessione](docs/SAAS_PRODUCTION_ARCHITECTURE.md)
 - [Roadmap e prove di accettazione](docs/DUAL_TRACK_EXECUTION_ROADMAP.md)
 - [Catalogo modalità prodotto](config/product-catalog.json)
