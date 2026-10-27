@@ -25,6 +25,12 @@ Eseguire `npm test`. Nella v0.6.0 vengono verificati 44 test automatici. La visu
 
 I dati risiedono nella memoria locale del browser (IndexedDB). Prima di cancellare la PWA o i dati del sito esportare e custodire il backup JSON in una destinazione sicura. Il contenuto del backup può essere riservato e non va pubblicato su GitHub. La v0.6.0 modifica solo l'interfaccia e le etichette: schema `oiko-local-v1`, versione `1`, e JSON `oiko-backup`, versione `1`, invariati.
 
+## Destinazione commerciale e cedibilità
+
+**Stato attuale: prototipo Oiko locale su GitHub Pages, Oiko Family in beta privata AppDeploy/Supabase.** Non attivare abbonamenti o trasformare GitHub Pages nell'hosting del SaaS commerciale: le condizioni Pages lo escludono. Per il rilascio commerciale servono un dominio proprio, un hosting adatto, gestione legale dei dati e ambienti di produzione separati. Il repository pubblico attualmente non ha una licenza software riconosciuta; non è una scelta di licenza commerciale implicita.
+
+[Governance, hosting, GDPR e trasferibilità](docs/COMMERCIAL_OWNERSHIP_AND_TRANSFER.md) · [Gate per il lancio](docs/PRODUCT-RELEASE-GATES.md)
+
 ## Pubblicazione GitHub Pages
 
 Caricare i file nella radice del repository, branch `main`, con Pages su `main / (root)`. La versione pubblica è https://manzo8b.github.io/oiko/. Non occorre reinstallare l'icona Home e non bisogna cancellare la cache o i dati per aggiornare. Per verificare colori e grafici aprire Oiko dall'icona originale, mantenendo la stessa origine.
