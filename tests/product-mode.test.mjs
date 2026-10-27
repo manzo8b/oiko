@@ -36,3 +36,16 @@ test('La navigazione mobile conserva le cinque sezioni principali', () => {
   assert.equal((sectionLine.match(/\['(?:oggi|spese|scadenze|report|impostazioni)'/g) ?? []).length, 5);
   assert.doesNotMatch(sectionLine, /'family'/);
 });
+
+test('La sidebar presenta la privacy in una card visiva con la promessa esplicita', () => {
+  const css = readFileSync(new URL('../assets/styles.css', import.meta.url), 'utf8');
+  assert.match(index, /oiko-trust-card/);
+  assert.match(index, /oiko-trust-smile/);
+  assert.match(index, /Più ordine,/);
+  assert.match(index, /Solo sul tuo dispositivo/);
+  assert.match(index, /Nessun conto collegato/);
+  assert.match(index, /Nessun dato personale viene inviato ai server Oiko\./);
+  assert.match(css, /\.oiko-trust-card\s*\{/);
+  assert.match(index, /styles\.css\?v=0\.6\.2/);
+  assert.doesNotMatch(index, /Nessun dato inviato a Oiko\./);
+});
