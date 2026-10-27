@@ -1,3 +1,10 @@
+## v0.6.1 — Un'unica Oiko, due modalità — 27 ottobre 2026
+
+- Aggiunta sezione Oiko Family, accessibile da header, sidebar e Impostazioni, mantenendo le cinque voci mobile.
+- La modalità Oiko locale rimane completamente libera, senza account e senza cambiare IndexedDB.
+- Link esplicito allo staging Family riservato ai tester; nessuna sincronizzazione/migrazione automatica dei dati.
+- Consolidata la palette Oiko v0.5 e introdotta architettura prodotto per la futura vendita.
+
 ## v0.6.0 — Previsione uscite 6 mesi — 26 ottobre 2026
 
 - In Report, previsione mensile delle scadenze aperte per sei mesi da oggi, con selezione del mese e dettaglio dei pagamenti.
