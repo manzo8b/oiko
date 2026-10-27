@@ -56,3 +56,7 @@ Comando informativo: `npm run release:check`. Comando di verifica bloccante, vol
 - [Inventario tecnico delle migrazioni Supabase e procedura di custodia privata](docs/FAMILY_MIGRATIONS_INVENTORY.md)
 
 [Custodia privata e inventario degli attuali 16 file Family](docs/FAMILY_PRIVATE_SOURCE_CUSTODY.md)
+
+## Sorgenti Family in archivio privato
+
+Il modulo cloud Family dispone ora di [repository privato separato](https://github.com/manzo8b/oiko-family-private), 16/16 sorgenti frontend, cinque migrazioni SQL archiviate, `package-lock.json` e build GitHub Actions superata. La beta AppDeploy e il sito Oiko gratuito non sono stati spostati. La ricostruzione di un database pulito, i test browser autonomi e l'attivazione commerciale **non sono ancora conclusi**. [Dettagli di custodia](docs/FAMILY_PRIVATE_SOURCE_CUSTODY.md).

@@ -31,9 +31,12 @@
       "id": "SOURCE",
       "label": "Sorgenti Family esportati in repository privato e build riproducibile",
       "critical": true,
-      "status": "not_started",
-      "next_evidence": "Build da clone pulito, dipendenze bloccate e test",
-      "evidence": []
+      "status": "in_progress",
+      "next_evidence": "Archivio privato, migrazioni e CI confermati; manca prova runtime di Family su nuovo ambiente e accettazione finale",
+      "evidence": [
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40512028821",
+        "docs/FAMILY_PRIVATE_SOURCE_CUSTODY.md"
+      ]
     },
     {
       "id": "LEGAL",
@@ -55,8 +58,8 @@
       "id": "PROD_DB",
       "label": "Supabase produzione isolato e schema riprodotto dalle migrazioni",
       "critical": true,
-      "status": "not_started",
-      "next_evidence": "RLS/RPC/isolamento multitenant testati su progetto vuoto",
+      "status": "in_progress",
+      "next_evidence": "5 migrazioni SQL archiviate privatamente; ricostruire DB pulito e validare RLS/RPC con almeno due famiglie",
       "evidence": []
     },
     {

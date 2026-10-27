@@ -4,8 +4,8 @@
 
 | Ordine | Pacchetto | Prova di completamento | Stato |
 | --- | --- | --- | --- |
-| 01 | Custodia Family fuori da AppDeploy | Repo privato, sorgenti e lockfile, build pulita | **APERTO** |
-| 02 | Baseline SQL riproducibile | Migrazioni eseguibili da zero, RLS, RPC, test isolamento | **APERTO** |
+| 01 | Custodia Family fuori da AppDeploy | Repo privato, 16 sorgenti, 5 SQL originali, lockfile, `npm ci`, test e build su GitHub | **COMPLETATO (packaging frontend)** |
+| 02 | Baseline SQL riproducibile | 5 SQL originali in privato; replay e prove RLS/RPC su database vuoto ancora mancanti | **IN CORSO** |
 | 03 | Titolare, IP e licenze | Chain-of-title e decisione licenza/venditore validate | **APERTO** |
 | 04 | Sicurezza Auth | Recupero email funzionante, SMTP, password protection, sessioni | **APERTO** |
 | 05 | Continuità e privacy | Backup automatico + restore, export/erasure, retention, DPA | **APERTO** |
@@ -34,3 +34,8 @@ La scelta del titolare legale e dell'entità che fattura **rimane aperta**; la s
 - **Advisor:** il warning `authenticated_security_definer_function_executable` sulla nuova RPC è una conseguenza dell'accesso tramite funzione privilegiata, limitato al nucleo con controllo `auth.uid()`. Va riesaminato prima del rilascio con audit indipendente; `auth_leaked_password_protection` resta disabilitato. La tabella privata non dispone volutamente di policy client. Non interpretare warning senza una review delle autorizzazioni.
 - **Sorgente Family proprietario:** resta in AppDeploy; **non** è stato pubblicato nel repository Oiko aperto, né creato un repository privato. Prima del passaggio alla produzione occorre un repository privato controllato dal titolare, un archivio integrale dei sorgenti e una build autonoma con dipendenze bloccate.
 - **Prossimo blocco di lavoro:** acquisizione sicura delle sorgenti e migrazioni storiche, SMTP e protezione password, backup con restore reale, dominio e hosting commerciale. Questa fase non attiva checkout, utenti pubblici né vendite.
+
+
+## Avanzamento — custodia sorgenti e dipendenze completata, 27 ottobre 2026
+
+Il repository privato [manzo8b/oiko-family-private](https://github.com/manzo8b/oiko-family-private) ora contiene 16/16 sorgenti dello snapshot Family, `package-lock.json` (199 voci), 5/5 migrazioni originali e una pipeline di build/test GitHub Actions. La compilazione indipendente è passata: [evidenza CI](https://github.com/manzo8b/oiko-family-private/actions/runs/40512028821). **Non equiparare questa prova di build al collaudo runtime in produzione**. Prossimo passaggio: schema completo da ricreare in Supabase isolato e test Auth/RLS, senza toccare i due utenti della beta.

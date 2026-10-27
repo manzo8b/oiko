@@ -1,7 +1,7 @@
 # Oiko Family — Custodia privata dei sorgenti e prova di autonomia
 
 **Ricognizione:** 27 ottobre 2026 · **AppDeploy:** `oiko-family-staging-wanqjz` · **Snapshot:** `1793104971266`  
-**Stato:** inventario verificato, **archivio privato NON creato**. Non pubblicare codice proprietario Family nel repository statico pubblico `manzo8b/oiko`.
+**Stato:** **repository privato operativo e compilazione indipendente superata**; ricostruzione backend e rilascio commerciale ancora da collaudare. Non pubblicare codice proprietario Family nel repository statico pubblico `manzo8b/oiko`.
 
 ## 1. Perché è un requisito di vendita o cessione
 
@@ -32,29 +32,25 @@ La differenza tra Oiko e Family deve restare netta: il codice del sito gratuito 
 
 **Totale: 16 file, letti integralmente nello snapshot.** La scansione di pattern elementari non ha individuato valori con prefissi `sb_secret_`, blocchi PEM di chiave privata o pattern evidenti di password codificate, **ma non sostituisce una scansione completa dei segreti prima di ogni commit**. Una chiave Supabase *publishable* può comparire nel browser; ruoli admin e segreti devono rimanere solo server-side.
 
-**Lacune rilevate:** non risulta `package-lock.json`; la raccolta `tests/tests.json` appartiene ai test AppDeploy e non dimostra da sola la riproducibilità autonoma della build. Le migrazioni Supabase storiche non sono ancora esportate in un repository privato.
+**Situazione successiva:** le 16 sorgenti sono state archiviate in `manzo8b/oiko-family-private`; 13 sono identiche al byte e 3 adattate per configurazione/branding/build. `package-lock.json` è versionato e `npm ci`, test e build hanno superato GitHub Actions. Le cinque migrazioni SQL originali sono state confrontate con il database e custodite nel repository privato. I test AppDeploy non diventano automaticamente test browser autonomi.
 
-## 3. Deposito sorgenti: operazione richiesta
+## 3. Deposito sorgenti — eseguito e verificato
 
-Il collegamento GitHub attualmente disponibile in chat consente lettura e commit **in repository già esistenti**, ma non espone un'azione per creare un nuovo repository. Il proprietario può creare **un repository nuovo, vuoto e PRIVATO**, ad esempio `manzo8b/oiko-family-private`, da GitHub → New repository → Private. Non inizializzare con codice pubblico; verificarne visibilità e accessi prima di caricare i file.
+- Repository: **[manzo8b/oiko-family-private](https://github.com/manzo8b/oiko-family-private)**, visibilità **Private** verificata con l'integrazione GitHub. Collegamento accessibile soltanto ad autorizzati.
+- **16/16 file Family importati**: 13 identici, 3 modificati intenzionalmente (HTML title, package metadata/comandi, configurazione pubblicabile Supabase tramite variabili Vite).
+- **5/5 migrazioni SQL originali** sotto `supabase/migrations` nel repository privato, versioni originali, contenuti ricontrollati contro `supabase_migrations.schema_migrations` senza esportare dati dei tester.
+- `package-lock.json` versionato con **199 voci di pacchetto**; GitHub Actions esegue `npm ci`, i test e `npm run build` su checkout pulito. Risultato **success**: [esecuzione CI](https://github.com/manzo8b/oiko-family-private/actions/runs/40512028821).
+- Nessun database, account o movimento dei tester è stato trasferito. L'attuale beta AppDeploy resta inalterata.
 
-**Non riutilizzare altri repository privati non pertinenti.** Non inserire i sorgenti Family nel repository pubblico o in un branch pubblico credendo che il branch sia riservato.
-
-Una volta creato e accessibile al connettore:
-1. Copiare tutti i 16 file dallo snapshot AppDeploy **senza alterarne il significato**.
-2. Convertire URL/key della beta in configurazione per ambiente (`.env.example` senza segreti, `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`), mantenendo lo staging funzionante.
-3. Usare installazione dipendenze vincolata e generare un lockfile; build `npm ci && npm run build` su checkout pulito; verificare output della route base/family.
-4. Esportare nell'archivio privato i cinque SQL originali delle migrazioni Supabase nell'ordine e con digest censiti in [Inventario SQL](FAMILY_MIGRATIONS_INVENTORY.md).
-5. Verificare policy, privilegi, RPC, test con due nuclei e utenti sintetici su database isolato.
-6. Definire release tag, manuale deploy, callback Auth, segreti e processo di rollback.
-7. Creare una copia esportabile/archivio cifrato controllato dal proprietario; evitare di includere DB, utenti tester, email o password.
+**Non è ancora provato** il funzionamento end-to-end della build privata con autenticazione, callback email e nuovo backend: mancano un ambiente di prova pulito con SQL riprodotto e la validazione runtime separata da AppDeploy.
 
 ## 4. Criteri di chiusura
 
-- [ ] Repository privato creato e visibilità **verificata dal connettore**.
-- [ ] Importati 16/16 file, checksum o confronto contenuto, e lockfile.
-- [ ] Build di produzione generata senza AppDeploy.
-- [ ] Cinque migrazioni custodite privatamente, ricostruzione su database vuoto.
+- [x] Repository privato creato e visibilità **verificata dal connettore**.
+- [x] Importati 16/16 file, confronto contenuto e lockfile versionato.
+- [x] Frontend compilato da GitHub Actions senza AppDeploy (`npm ci`, test, `vite build`); runtime con nuovo Supabase ancora da verificare.
+- [x] Cinque migrazioni custodite privatamente e confrontate con gli originali.
+- [ ] Ricostruzione effettiva del database su ambiente isolato e test RLS/RPC.
 - [ ] Test di login, inviti, revoca, scadenze e doppio pagamento in ambiente separato.
 - [ ] Nessun segreto in client/repo e nessun dato utente pubblicato.
 - [ ] Procedure di ripristino e cessione documentate.
