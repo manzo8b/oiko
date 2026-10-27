@@ -1,6 +1,8 @@
-# Oiko v0.6.1 — Una Oiko, due modalità
+# Oiko v0.6.2 — Una Oiko, due modalità
 
 **Oiko senza account** mantiene la gestione locale e il formato backup preesistente. La nuova sezione **Oiko Family** presenta la beta privata con due account e backend Supabase in una pagina separata; non sincronizza né importa dati locali. Attenzione: l'URL di staging è raggiungibile pubblicamente ma non permette registrazioni aperte e non è ancora un servizio commerciale.
+
+La v0.6.2 introduce una **card privacy nella sidebar Oiko**, con piccolo logo sorridente, badge leggibili e promessa esplicita: «Nessun dato personale viene inviato ai server Oiko». La card riguarda esclusivamente la versione locale gratuita, non Oiko Family che usa il cloud.
 
 ## Base v0.6.0 — Dashboard e grafici
 
