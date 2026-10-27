@@ -29,7 +29,7 @@ I dati risiedono nella memoria locale del browser (IndexedDB). Prima di cancella
 
 **Stato attuale: prototipo Oiko locale su GitHub Pages, Oiko Family in beta privata AppDeploy/Supabase.** Non attivare abbonamenti o trasformare GitHub Pages nell'hosting del SaaS commerciale: le condizioni Pages lo escludono. Per il rilascio commerciale servono un dominio proprio, un hosting adatto, gestione legale dei dati e ambienti di produzione separati. Il repository pubblico attualmente non ha una licenza software riconosciuta; non è una scelta di licenza commerciale implicita.
 
-[Governance, hosting, GDPR e trasferibilità](docs/COMMERCIAL_OWNERSHIP_AND_TRANSFER.md) · [Gate per il lancio](docs/PRODUCT-RELEASE-GATES.md)
+[Governance, hosting, GDPR e trasferibilità](docs/COMMERCIAL_OWNERSHIP_AND_TRANSFER.md) · [Scelta commerciale e titolarità](docs/COMMERCIAL_DECISION_RECORD.md) · [Dati e privacy Family](docs/FAMILY_PRIVACY_AND_DATA_REGISTER.md) · [Piano di produzione e cessione](docs/FAMILY_PRODUCTION_AND_TRANSFER_RUNBOOK.md) · [Gate per il lancio](docs/PRODUCT-RELEASE-GATES.md)
 
 ## Pubblicazione GitHub Pages
 
