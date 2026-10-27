@@ -41,3 +41,13 @@ test('Anche la cessione è bloccata in assenza di IP, sorgenti e contratti',()=>
  assert.equal(r.status,1,r.stderr);
  assert.match(r.stdout,/Software transfer: NOT READY/);
 });
+
+test('La fondazione commerciale usa una tabella privata e il premium resta disattivato',()=>{
+ const sql=readFileSync(new URL('../supabase/migrations/20261027134500_oiko_commercial_shadow_entitlements.sql',import.meta.url),'utf8');
+ assert.match(sql,/create table if not exists oiko_private\.oiko_plan_entitlements/);
+ assert.match(sql,/enable row level security/);
+ assert.match(sql,/revoke all on table .* from public, anon, authenticated/);
+ assert.match(sql,/grant execute on function public\.oiko_family_plan_status\(uuid\)/);
+ assert.match(sql,/false::boolean/);
+ assert.doesNotMatch(sql,/service_role|stripe_secret_key|sk_live_/);
+});
