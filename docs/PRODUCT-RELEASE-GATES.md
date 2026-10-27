@@ -76,6 +76,16 @@ Private Family staging currently operates at **https://oiko-family-staging-wanqj
 - The legal identity of the seller/controller has not been established. Do not publish a finalized privacy notice containing assumed names or contacts.
 - Source of truth: [Commercial ownership and transfer](COMMERCIAL_OWNERSHIP_AND_TRANSFER.md).
 
+## Fascicolo commerciale — predisposto il 27 ottobre 2026
+
+Documenti di lavoro, ancora da approvare e completare con dati del soggetto venditore:
+
+- [Scelta di chi vende, licenze e catena di proprietà](COMMERCIAL_DECISION_RECORD.md) — **il venditore e titolare del trattamento non sono ancora stati designati**.
+- [Mappa verificata dei dati e dei rischi privacy](FAMILY_PRIVACY_AND_DATA_REGISTER.md) — sei tabelle Family protette RLS, inviti senza SELECT per design, termini di conservazione e flussi di cancellazione ancora da definire.
+- [Piano tecnico di produzione e cessione](FAMILY_PRODUCTION_AND_TRANSFER_RUNBOOK.md) — separazione staging/produzione, sorgenti Family trasferibili, migrazioni, SMTP, backup/restore, dominio e hosting idoneo.
+
+Non attivare abbonamenti, non trasferire gli account degli utenti né rendere pubblica la sorgente della beta Family finché proprietà intellettuale, titolare GDPR, infrastruttura e contratti non sono stati approvati.
+
 ## Next sprint (recommended)
 
 1. Validate the Family authenticated dashboard with both real test accounts after this visual release.
