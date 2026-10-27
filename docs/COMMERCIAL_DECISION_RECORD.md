@@ -4,6 +4,8 @@
 **Stato:** preparazione; decisione giuridica, fiscale e commerciale non ancora formalizzata.  
 **Uso:** fascicolo di due diligence e decisioni, non consulenza legale o atto di cessione.
 
+**Direzione commerciale approvata il 27 ottobre 2026:** procedere su **entrambi i canali**: (1) Oiko Family come futuro servizio a pagamento per nuclei familiari; (2) cessione/licenza del codice e degli asset a un'altra impresa. La scelta **non** identifica ancora il venditore o la forma societaria A/B/C e non costituisce autorizzazione a incassare. Vedi [Strategia a doppio percorso](DUAL_TRACK_STRATEGY.md).
+
 ## 1. Decisione bloccante: chi vende e chi gestisce?
 
 Alla data della ricognizione **non è stato identificato e verificato alcun soggetto giuridico** come venditore, licenziante o titolare del trattamento di Oiko Family. Non compilare informative, contratti o checkout con nominativi o partite IVA presunti.
