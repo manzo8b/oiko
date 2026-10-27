@@ -33,6 +33,8 @@ Codice sorgente: GitHub + archivio Family riproducibile, controllato dal titolar
 
 Il dominio e l'hosting commerciale sono ancora **DA SELEZIONARE**, non indovinare provider, piani o prezzi. Evitare di spostare Family su GitHub Pages per usarlo come SaaS a pagamento: https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features
 
+**Inventario effettivo dell'app Family:** [Custodia privata dei sorgenti](FAMILY_PRIVATE_SOURCE_CUSTODY.md), snapshot AppDeploy verificato il 27 ottobre 2026. Il repository privato non è stato ancora creato.
+
 ## 3. Fasi operative con criteri di accettazione
 
 ### P0 — Custodia del sorgente e proprietà

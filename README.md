@@ -54,3 +54,5 @@ Comando informativo: `npm run release:check`. Comando di verifica bloccante, vol
 
 - [Narrazione commerciale e testi della dashboard v0.6.3](docs/MARKETING_PRODUCT_NARRATIVE.md)
 - [Inventario tecnico delle migrazioni Supabase e procedura di custodia privata](docs/FAMILY_MIGRATIONS_INVENTORY.md)
+
+[Custodia privata e inventario degli attuali 16 file Family](docs/FAMILY_PRIVATE_SOURCE_CUSTODY.md)
