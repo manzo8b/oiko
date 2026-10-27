@@ -46,7 +46,7 @@ test('La sidebar presenta la privacy in una card visiva con la promessa esplicit
   assert.match(index, /Nessun conto collegato/);
   assert.match(index, /Nessun dato personale viene inviato ai server Oiko\./);
   assert.match(css, /\.oiko-trust-card\s*\{/);
-  assert.match(index, /styles\.css\?v=0\.6\.2/);
+  assert.match(index, /styles\.css\?v=0\.6\.3/);
   assert.doesNotMatch(index, /Nessun dato inviato a Oiko\./);
 });
 
@@ -56,7 +56,7 @@ test('La dashboard presenta Oiko come micro-app pratica senza forzare un account
  assert.match(app,/Gratis, senza account/);
  assert.match(app,/Dati sul tuo dispositivo/);
  assert.match(app,/Disponibile ora in beta privata/);
- assert.match(index,/styles\\.css\\?v=0\\.6\\.3/);
- assert.match(index,/app\\.mjs\\?v=0\\.6\\.3/);
+ assert.match(index,/styles\.css\?v=0\.6\.3/);
+ assert.match(index,/app\.mjs\?v=0\.6\.3/);
  assert.match(index,/Con Oiko Family puoi condividere la gestione in due/);
 });
