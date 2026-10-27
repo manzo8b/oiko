@@ -7,6 +7,7 @@ const read=path=>JSON.parse(readFileSync(new URL(path,base),'utf8'));
 const product=read('config/product-catalog.json');
 const release=read('config/release-gates.json');
 const strict=process.argv.includes('--strict');
+const strictTransfer=process.argv.includes('--strict-transfer');
 const fail=message=>{throw new Error('Release audit: '+message);};
 if(product.product!=='Oiko'||release.product!=='Oiko')fail('invalid product identity');
 if(product.modes.oiko.account_required!==false||product.modes.oiko.price_model!=='free')fail('local Oiko must remain free and independent');
@@ -36,12 +37,16 @@ if(checkoutEnabled&&(
   product.deployment.production_supabase_project==='NOT_CREATED'
 ))fail('commercial checkout needs production infrastructure and entitlements');
 const approved=criticalPassed&&checkoutEnabled;
-if(approved && (release.business_handover_ready!==true)) {
- console.log('Nota: vendita attivabile; cessione completa non ancora approvata');
-}
+// Software handover is an independent exit path; a buyer may take over
+// an unlaunched product without requiring a live paid subscription.
+const transferRequired=['OPERATOR','IP','SOURCE','LEGAL','TRANSFER'];
+const transferBlockers=release.gates.filter(g=>transferRequired.includes(g.id)&&g.status!=='verified');
+const transferable=transferBlockers.length===0&&release.business_handover_ready===true;
 console.log('Oiko | Commercial release audit');
 console.log('Modalità: Oiko gratuito + Oiko Family (beta)');
 console.log('Bloccanti aperti: '+blockers.length+' / '+release.gates.length);
 for(const g of blockers)console.log(' - '+g.id+': '+g.status+' — '+g.label);
-console.log(approved?'Commercial release gate: READY':'Commercial release gate: NOT READY (nessuna vendita attiva)');
+console.log(approved?'SaaS launch: READY':'SaaS launch: NOT READY (nessuna vendita attiva)');
+console.log(transferable?'Software transfer: READY':'Software transfer: NOT READY (cessione/licenza da validare)');
 if(strict&&!approved)process.exitCode=1;
+if(strictTransfer&&!transferable)process.exitCode=1;

@@ -28,10 +28,16 @@ test('Rilascio commerciale è bloccato finché mancano le verifiche',()=>{
  assert.ok(gates.gates.every(x=>x.status!=='verified'||x.evidence.length>0));
  const r=spawnSync(process.execPath,[new URL('../scripts/release-readiness.mjs',import.meta.url).pathname,'--strict'],{encoding:'utf8'});
  assert.equal(r.status,1);
- assert.match(r.stdout,/NOT READY/);
+ assert.match(r.stdout,/SaaS launch: NOT READY/);
 });
 test('Il controllo informativo resta eseguibile senza bloccare QA',()=>{
  const r=spawnSync(process.execPath,[new URL('../scripts/release-readiness.mjs',import.meta.url).pathname],{encoding:'utf8'});
  assert.equal(r.status,0,r.stderr);
  assert.match(r.stdout,/Bloccanti aperti:/);
+});
+
+test('Anche la cessione è bloccata in assenza di IP, sorgenti e contratti',()=>{
+ const r=spawnSync(process.execPath,[new URL('../scripts/release-readiness.mjs',import.meta.url).pathname,'--strict-transfer'],{encoding:'utf8'});
+ assert.equal(r.status,1,r.stderr);
+ assert.match(r.stdout,/Software transfer: NOT READY/);
 });
