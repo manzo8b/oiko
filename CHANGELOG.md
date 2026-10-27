@@ -1,3 +1,9 @@
+## v0.6.2 — Fiducia e privacy a colpo d’occhio — 27 ottobre 2026
+
+- Trasformato il testo tecnico in fondo alla sidebar in una card rassicurante Oiko, con logo e sorriso giallo.
+- Badge «Solo sul tuo dispositivo» e «Nessun conto collegato»; promessa esplicita «Nessun dato personale viene inviato ai server Oiko».
+- Nessuna modifica al funzionamento locale, alle spese o alla modalità Family; versionato CSS per il refresh dei browser.
+
 ## v0.6.1 — Un'unica Oiko, due modalità — 27 ottobre 2026
 
 - Aggiunta sezione Oiko Family, accessibile da header, sidebar e Impostazioni, mantenendo le cinque voci mobile.
