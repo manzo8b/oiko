@@ -1,4 +1,8 @@
-# Oiko v0.6.0 — Dashboard e grafici
+# Oiko v0.6.1 — Una Oiko, due modalità
+
+**Oiko senza account** mantiene la gestione locale e il formato backup preesistente. La nuova sezione **Oiko Family** presenta la beta privata con due account e backend Supabase in una pagina separata; non sincronizza né importa dati locali. Attenzione: l'URL di staging è raggiungibile pubblicamente ma non permette registrazioni aperte e non è ancora un servizio commerciale.
+
+## Base v0.6.0 — Dashboard e grafici
 
 Questa versione conserva **la palette Oiko v0.5**, il database IndexedDB e il formato di backup JSON v1.
 
