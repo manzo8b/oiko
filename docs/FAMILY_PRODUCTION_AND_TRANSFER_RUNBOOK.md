@@ -108,3 +108,18 @@ Il dominio e l'hosting commerciale sono ancora **DA SELEZIONARE**, non indovinar
 - Checklist effettivo trasferimento asset con riferimenti ai contratti (non segreti).
 
 **Fonti:** https://supabase.com/docs/guides/platform/project-transfer · https://supabase.com/docs/guides/platform/backups · https://supabase.com/legal/customer-resources/data-processing-addendum
+
+
+## Collaudo incrementale — 27 ottobre 2026 (replay + Auth REST + DR)
+
+**Controlli passati in GitHub Actions su ambienti temporanei, non sul servizio dei tester:**
+
+- `Oiko Family isolated DB`: 6 migrazioni applicate su PostgreSQL 16 vuoto, due nuclei/five utenti sintetici, autorizzazioni RLS/RPC, idempotenza e invito/revoca/reinvito.
+- Concorrenza reale con due connessioni PostgreSQL indipendenti: **un pagamento registrato, uno rifiutato, nessun doppione**. [Evidenza](https://github.com/manzo8b/oiko-family-private/actions/runs/40525888049).
+- `Oiko Family full local Supabase Auth + REST`: cinque sessioni Auth reali, PostgREST, inviti, due famiglie, isolamento, piano Family beta e recupero email richiesto. [Evidenza](https://github.com/manzo8b/oiko-family-private/actions/runs/40525363048).
+- Consegna **locale** dell'email di recupero a Mailpit, senza alcuna email inviata all'esterno. [Evidenza](https://github.com/manzo8b/oiko-family-private/actions/runs/40526380234).
+- Dump e ripristino PostgreSQL **con soli dati inventati** in un secondo DB temporaneo, confronto di spese, membri, bollette e verifica RLS/RPC. [Evidenza](https://github.com/manzo8b/oiko-family-private/actions/runs/40526710632).
+
+**Limiti da non superare a parole:** questo non costituisce restore di backup gestiti dal cloud Supabase, test del fornitore SMTP commerciale, test browser/mobile della build privata, pen-test o test di carico esteso. Non è stato creato un nuovo progetto Supabase e la beta dei tester resta invariata.
+
+**Gate commerciale:** tutti i requisiti critici rimangono aperti, `market_release_allowed=false`; nessuna attivazione di checkout, iscrizioni pubbliche o incassi.

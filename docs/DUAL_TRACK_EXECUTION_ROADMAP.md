@@ -5,7 +5,7 @@
 | Ordine | Pacchetto | Prova di completamento | Stato |
 | --- | --- | --- | --- |
 | 01 | Custodia Family fuori da AppDeploy | Repo privato, 16 sorgenti, 5 SQL originali, lockfile, `npm ci`, test e build su GitHub | **COMPLETATO (packaging frontend)** |
-| 02 | Baseline SQL riproducibile | 5 SQL originali in privato; replay e prove RLS/RPC su database vuoto ancora mancanti | **IN CORSO** |
+| 02 | Baseline SQL riproducibile | 6 SQL originali e replay su Postgres isolato, prove con Auth e REST locali superate; resta hosted Supabase | **IN CORSO — baseline locale verificata** |
 | 03 | Titolare, IP e licenze | Chain-of-title e decisione licenza/venditore validate | **APERTO** |
 | 04 | Sicurezza Auth | Recupero email funzionante, SMTP, password protection, sessioni | **APERTO** |
 | 05 | Continuità e privacy | Backup automatico + restore, export/erasure, retention, DPA | **APERTO** |
@@ -39,3 +39,18 @@ La scelta del titolare legale e dell'entità che fattura **rimane aperta**; la s
 ## Avanzamento — custodia sorgenti e dipendenze completata, 27 ottobre 2026
 
 Il repository privato [manzo8b/oiko-family-private](https://github.com/manzo8b/oiko-family-private) ora contiene 16/16 sorgenti dello snapshot Family, `package-lock.json` (199 voci), 5/5 migrazioni originali e una pipeline di build/test GitHub Actions. La compilazione indipendente è passata: [evidenza CI](https://github.com/manzo8b/oiko-family-private/actions/runs/40512028821). **Non equiparare questa prova di build al collaudo runtime in produzione**. Prossimo passaggio: schema completo da ricreare in Supabase isolato e test Auth/RLS, senza toccare i due utenti della beta.
+
+
+## Collaudo incrementale — 27 ottobre 2026 (replay + Auth REST + DR)
+
+**Controlli passati in GitHub Actions su ambienti temporanei, non sul servizio dei tester:**
+
+- `Oiko Family isolated DB`: 6 migrazioni applicate su PostgreSQL 16 vuoto, due nuclei/five utenti sintetici, autorizzazioni RLS/RPC, idempotenza e invito/revoca/reinvito.
+- Concorrenza reale con due connessioni PostgreSQL indipendenti: **un pagamento registrato, uno rifiutato, nessun doppione**. [Evidenza](https://github.com/manzo8b/oiko-family-private/actions/runs/40525888049).
+- `Oiko Family full local Supabase Auth + REST`: cinque sessioni Auth reali, PostgREST, inviti, due famiglie, isolamento, piano Family beta e recupero email richiesto. [Evidenza](https://github.com/manzo8b/oiko-family-private/actions/runs/40525363048).
+- Consegna **locale** dell'email di recupero a Mailpit, senza alcuna email inviata all'esterno. [Evidenza](https://github.com/manzo8b/oiko-family-private/actions/runs/40526380234).
+- Dump e ripristino PostgreSQL **con soli dati inventati** in un secondo DB temporaneo, confronto di spese, membri, bollette e verifica RLS/RPC. [Evidenza](https://github.com/manzo8b/oiko-family-private/actions/runs/40526710632).
+
+**Limiti da non superare a parole:** questo non costituisce restore di backup gestiti dal cloud Supabase, test del fornitore SMTP commerciale, test browser/mobile della build privata, pen-test o test di carico esteso. Non è stato creato un nuovo progetto Supabase e la beta dei tester resta invariata.
+
+**Gate commerciale:** tutti i requisiti critici rimangono aperti, `market_release_allowed=false`; nessuna attivazione di checkout, iscrizioni pubbliche o incassi.

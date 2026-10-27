@@ -32,9 +32,10 @@
       "label": "Sorgenti Family esportati in repository privato e build riproducibile",
       "critical": true,
       "status": "in_progress",
-      "next_evidence": "Archivio privato, migrazioni e CI confermati; manca prova runtime di Family su nuovo ambiente e accettazione finale",
+      "next_evidence": "16 frontend files, lockfile, 6 SQL migrations and independent builds verified. Remaining browser-based E2E on real hosted isolated Supabase and operator review.",
       "evidence": [
-        "https://github.com/manzo8b/oiko-family-private/actions/runs/40512028821",
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40525363001",
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40525363048",
         "docs/FAMILY_PRIVATE_SOURCE_CUSTODY.md"
       ]
     },
@@ -59,24 +60,31 @@
       "label": "Supabase produzione isolato e schema riprodotto dalle migrazioni",
       "critical": true,
       "status": "in_progress",
-      "next_evidence": "5 migrazioni SQL archiviate privatamente; ricostruire DB pulito e validare RLS/RPC con almeno due famiglie",
-      "evidence": []
+      "next_evidence": "6 migrations replayed successfully in disposable PostgreSQL and local Supabase Auth/REST. Still need separate hosted production project, routing/recovery and isolation E2E before launch.",
+      "evidence": [
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40525363048",
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40524353402"
+      ]
     },
     {
       "id": "SECURITY",
       "label": "SMTP verificato, password compromesse e recovery/exit testati",
       "critical": true,
       "status": "in_progress",
-      "next_evidence": "Leaked-password warning attuale; Pro o superiore richiesto per la protezione Supabase",
-      "evidence": []
+      "next_evidence": "Local Supabase Auth and local Mailpit recovery email delivery passed. Production SMTP, full recovery password-change and compromised-password protection remain unverified.",
+      "evidence": [
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40526380234"
+      ]
     },
     {
       "id": "BACKUP",
       "label": "Backup del server e restore isolato documentati",
       "critical": true,
-      "status": "not_started",
-      "next_evidence": "Misure RPO/RTO e verbale di ripristino, non basta export JSON",
-      "evidence": []
+      "status": "in_progress",
+      "next_evidence": "Synthetic PostgreSQL dump→restore verified with tables, RLS, RPC and tenant separation. Managed Supabase backups, RPO/RTO, recovery procedures and remote restore still not tested.",
+      "evidence": [
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40526710632"
+      ]
     },
     {
       "id": "ERASURE",
@@ -91,8 +99,11 @@
       "label": "Test E2E di due famiglie separate e carico",
       "critical": true,
       "status": "in_progress",
-      "next_evidence": "SQL isolato e test manuali positivi; mancano utente terzo e stress test",
-      "evidence": []
+      "next_evidence": "2 separate families, 5 synthetic accounts, REST RLS, invitations, revocations and true concurrent payment race passed. Still need higher load and hosted-production HTTP E2E.",
+      "evidence": [
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40525363048",
+        "https://github.com/manzo8b/oiko-family-private/actions/runs/40525888049"
+      ]
     },
     {
       "id": "BILLING",
