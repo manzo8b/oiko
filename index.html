@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/icon-180.png?v=0.5.1">
   <link rel="icon" href="./assets/logo.svg?v=0.5.1" type="image/svg+xml">
   <title>Oiko · La tua casa è OK</title>
-  <link rel="stylesheet" href="./assets/styles.css?v=0.6.1">
+  <link rel="stylesheet" href="./assets/styles.css?v=0.6.2">
 </head>
 <body>
   <div class="app-shell" id="app">
@@ -22,7 +22,39 @@
       <p class="side-caption">LA TUA CASA È OK</p>
       <nav id="side-nav" aria-label="Sezioni"></nav>
       <a class="sidebar-family-link" href="#family"><span aria-hidden="true">↗</span><span>Oiko Family <small>Gestione in due</small></span></a>
-      <div class="sidebar-footer"><div class="sidebar-motto">Più ordine, più serenità</div><div class="privacy-mark"><span class="private-dot"></span> Solo sul tuo dispositivo</div><p>Nessun conto collegato.<br>Nessun dato inviato a Oiko.</p></div>
+      <div class="sidebar-footer">
+        <section class="oiko-trust-card" aria-label="La privacy di Oiko">
+          <div class="oiko-trust-header">
+            <span class="oiko-trust-avatar" aria-hidden="true">
+              <img src="./assets/logo.svg?v=0.5.1" alt="" width="40" height="40">
+              <svg class="oiko-trust-smile" viewBox="0 0 30 30" width="29" height="29" focusable="false">
+                <circle cx="15" cy="15" r="14" fill="#FFD04A"/>
+                <circle cx="10.5" cy="12.2" r="1.45" fill="#33206F"/>
+                <circle cx="19.5" cy="12.2" r="1.45" fill="#33206F"/>
+                <path d="M9.4 17.4Q15 23.4 20.6 17.4" stroke="#33206F" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              </svg>
+            </span>
+            <div class="oiko-trust-copy">
+              <span class="oiko-trust-kicker">LA TUA PRIVACY È OK</span>
+              <strong>Più ordine,<br>più serenità</strong>
+            </div>
+          </div>
+          <div class="oiko-trust-pills" aria-label="Come funziona Oiko">
+            <span class="oiko-trust-pill">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.7"/><path d="M11 18h2"/></svg>
+              Solo sul tuo dispositivo
+            </span>
+            <span class="oiko-trust-pill">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10M9 10v10M15 10v10M20 10v10M3 21h18M2.5 9 12 3l9.5 6H2.5Z"/><path d="M4 4l16 16" stroke="#B43A50"/></svg>
+              Nessun conto collegato
+            </span>
+          </div>
+          <p class="oiko-trust-promise">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 6v5c0 5-3.4 8.4-8 11-4.6-2.6-8-6-8-11V6l8-4Z"/><path d="m8.7 12.2 2.3 2.3 4.5-4.7"/></svg>
+            <span>Nessun dato personale viene inviato ai server Oiko.</span>
+          </p>
+        </section>
+      </div>
     </aside>
     <div class="right-panel">
       <header class="topbar"><a href="#oggi" class="top-brand" aria-label="Oiko, vai alla panoramica"><img src="./assets/logo.svg?v=0.5.1" alt="" width="34" height="34"><strong>Oiko</strong></a><div class="topbar-actions"><a href="#family" class="topbar-family-link">Oiko Family ↗</a><span class="privacy-pill"><span aria-hidden="true">●</span> Dati locali</span><button class="button primary small" id="top-add" type="button">+ Aggiungi spesa</button></div></header>
