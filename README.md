@@ -19,6 +19,12 @@ Questa versione conserva **la palette Oiko v0.5**, il database IndexedDB e il fo
 - Pulsante mobile rapido visibile solo nella sezione Spese; pulsante «Registra una spesa» sempre presente nel riquadro della dashboard.
 - Nessuna nuova raccolta di dati, nessun account, nessuna sincronizzazione, nessun pagamento eseguito da Oiko.
 
+## Controlli automatici e accettazione v0.6.3 (29 ottobre 2026)
+
+Il repository ora include il workflow GitHub Actions `oiko-checks.yml` e gli smoke test della modalità gratuita. Eseguire `npm test` e `npm run release:check` e verificare l'esito CI; l'inserimento dei file da solo non equivale a un test superato. Prima di dichiarare stabilizzata la modalità gratuita, completare il collaudo con dati fittizi e backup/restore isolato, anche su smartphone reale.
+
+[Checklist di accettazione Oiko gratuita](docs/SOLO_RELEASE_ACCEPTANCE_2026-10-29.md) · [Workflow test](.github/workflows/oiko-checks.yml)
+
 ## Controlli
 
 Eseguire `npm test`. Nella v0.6.0 vengono verificati 44 test automatici. La visualizzazione è stata collaudata con dati fittizi in browser su schermi da 350 px, 390 px e 1365 px, mediante simulazione dell'archivio applicativo (non test diretto di Safari iPhone o IndexedDB). Non è stato alterato il database locale dei dispositivi degli utenti.
