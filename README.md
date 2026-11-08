@@ -1,5 +1,9 @@
 # Oiko v0.6.3 — Una Oiko, due modalità
 
+**[Prova Oiko gratuita](https://manzo8b.github.io/oiko/)** · [Documentazione](https://github.com/manzo8b/oiko) · [Segnala un problema](https://github.com/manzo8b/oiko/issues)
+
+La versione gratuita è un gestore delle spese domestiche **senza account**, con dati salvati nel browser. La versione Family è distinta, privata e in beta: non viene offerta come servizio pubblico e non condivide automaticamente i dati dell'app gratuita.
+
 **Oiko senza account** mantiene la gestione locale e il formato backup preesistente. La nuova sezione **Oiko Family** presenta la beta privata con due account e backend Supabase in una pagina separata; non sincronizza né importa dati locali. Attenzione: l'URL di staging è raggiungibile pubblicamente ma non permette registrazioni aperte e non è ancora un servizio commerciale.
 
 La v0.6.2 introduce una **card privacy nella sidebar Oiko**, con piccolo logo sorridente, badge leggibili e promessa esplicita: «Nessun dato personale viene inviato ai server Oiko». La card riguarda esclusivamente la versione locale gratuita, non Oiko Family che usa il cloud.
